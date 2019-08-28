@@ -1,0 +1,1423 @@
+{
+  "contractName": "BlockRewardFeeManager",
+  "abi": [
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_fee",
+          "type": "uint256"
+        }
+      ],
+      "name": "setForeignFee",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_fee",
+          "type": "uint256"
+        }
+      ],
+      "name": "setHomeFee",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "getHomeFee",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "_value",
+          "type": "uint256"
+        },
+        {
+          "name": "_recover",
+          "type": "bool"
+        },
+        {
+          "name": "_feeType",
+          "type": "bytes32"
+        }
+      ],
+      "name": "calculateFee",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "_count",
+          "type": "uint256"
+        }
+      ],
+      "name": "random",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "getFeeManagerMode",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bytes4"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "pure",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "getForeignFee",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "name": "fee",
+          "type": "uint256"
+        }
+      ],
+      "name": "HomeFeeUpdated",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "name": "fee",
+          "type": "uint256"
+        }
+      ],
+      "name": "ForeignFeeUpdated",
+      "type": "event"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_fee",
+          "type": "uint256"
+        }
+      ],
+      "name": "distributeFeeFromAffirmation",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_fee",
+          "type": "uint256"
+        }
+      ],
+      "name": "distributeFeeFromSignatures",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "pragma solidity 0.4.24;\n\nimport \"./BaseFeeManager.sol\";\nimport \"../IBlockReward.sol\";\n\ncontract BlockRewardFeeManager is BaseFeeManager {\n\n    function distributeFeeFromAffirmation(uint256 _fee) external {\n        distributeFeeFromBlockReward(_fee);\n    }\n\n    function distributeFeeFromSignatures(uint256 _fee) external {\n        distributeFeeFromBlockReward(_fee);\n    }\n\n    function _blockRewardContract() internal view returns(IBlockReward) {\n        return IBlockReward(addressStorage[keccak256(abi.encodePacked(\"blockRewardContract\"))]);\n    }\n\n    function distributeFeeFromBlockReward(uint256 _fee) internal;\n}\n",
+  "sourcePath": "/Users/fbranci/iexecdev/vivani/tokenbridge/contracts/contracts/upgradeable_contracts/BlockRewardFeeManager.sol",
+  "ast": {
+    "absolutePath": "/Users/fbranci/iexecdev/vivani/tokenbridge/contracts/contracts/upgradeable_contracts/BlockRewardFeeManager.sol",
+    "exportedSymbols": {
+      "BlockRewardFeeManager": [
+        4090
+      ]
+    },
+    "id": 4091,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 4043,
+        "literals": [
+          "solidity",
+          "0.4",
+          ".24"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:27"
+      },
+      {
+        "absolutePath": "/Users/fbranci/iexecdev/vivani/tokenbridge/contracts/contracts/upgradeable_contracts/BaseFeeManager.sol",
+        "file": "./BaseFeeManager.sol",
+        "id": 4044,
+        "nodeType": "ImportDirective",
+        "scope": 4091,
+        "sourceUnit": 2589,
+        "src": "25:30:27",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/Users/fbranci/iexecdev/vivani/tokenbridge/contracts/contracts/IBlockReward.sol",
+        "file": "../IBlockReward.sol",
+        "id": 4045,
+        "nodeType": "ImportDirective",
+        "scope": 4091,
+        "sourceUnit": 712,
+        "src": "56:29:27",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 4046,
+              "name": "BaseFeeManager",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 2588,
+              "src": "121:14:27",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_BaseFeeManager_$2588",
+                "typeString": "contract BaseFeeManager"
+              }
+            },
+            "id": 4047,
+            "nodeType": "InheritanceSpecifier",
+            "src": "121:14:27"
+          }
+        ],
+        "contractDependencies": [
+          1701,
+          2588,
+          4493
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": false,
+        "id": 4090,
+        "linearizedBaseContracts": [
+          4090,
+          2588,
+          4493,
+          1701
+        ],
+        "name": "BlockRewardFeeManager",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 4056,
+              "nodeType": "Block",
+              "src": "204:51:27",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 4053,
+                        "name": "_fee",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 4049,
+                        "src": "243:4:27",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      ],
+                      "id": 4052,
+                      "name": "distributeFeeFromBlockReward",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 4089,
+                      "src": "214:28:27",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_uint256_$returns$__$",
+                        "typeString": "function (uint256)"
+                      }
+                    },
+                    "id": 4054,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "214:34:27",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 4055,
+                  "nodeType": "ExpressionStatement",
+                  "src": "214:34:27"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 4057,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "distributeFeeFromAffirmation",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 4050,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4049,
+                  "name": "_fee",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4057,
+                  "src": "181:12:27",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 4048,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "181:7:27",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "180:14:27"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 4051,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "204:0:27"
+            },
+            "scope": 4090,
+            "src": "143:112:27",
+            "stateMutability": "nonpayable",
+            "superFunction": 2557,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 4066,
+              "nodeType": "Block",
+              "src": "321:51:27",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 4063,
+                        "name": "_fee",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 4059,
+                        "src": "360:4:27",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      ],
+                      "id": 4062,
+                      "name": "distributeFeeFromBlockReward",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 4089,
+                      "src": "331:28:27",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_uint256_$returns$__$",
+                        "typeString": "function (uint256)"
+                      }
+                    },
+                    "id": 4064,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "331:34:27",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 4065,
+                  "nodeType": "ExpressionStatement",
+                  "src": "331:34:27"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 4067,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "distributeFeeFromSignatures",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 4060,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4059,
+                  "name": "_fee",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4067,
+                  "src": "298:12:27",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 4058,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "298:7:27",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "297:14:27"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 4061,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "321:0:27"
+            },
+            "scope": 4090,
+            "src": "261:111:27",
+            "stateMutability": "nonpayable",
+            "superFunction": 2562,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 4083,
+              "nodeType": "Block",
+              "src": "446:104:27",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "baseExpression": {
+                          "argumentTypes": null,
+                          "id": 4073,
+                          "name": "addressStorage",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 1688,
+                          "src": "476:14:27",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_mapping$_t_bytes32_$_t_address_$",
+                            "typeString": "mapping(bytes32 => address)"
+                          }
+                        },
+                        "id": 4080,
+                        "indexExpression": {
+                          "argumentTypes": null,
+                          "arguments": [
+                            {
+                              "argumentTypes": null,
+                              "arguments": [
+                                {
+                                  "argumentTypes": null,
+                                  "hexValue": "626c6f636b526577617264436f6e7472616374",
+                                  "id": 4077,
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": true,
+                                  "kind": "string",
+                                  "lValueRequested": false,
+                                  "nodeType": "Literal",
+                                  "src": "518:21:27",
+                                  "subdenomination": null,
+                                  "typeDescriptions": {
+                                    "typeIdentifier": "t_stringliteral_20ae0b8a761b32f3124efb075f427dd6ca669e88ae7747fec9fd1ad688699f32",
+                                    "typeString": "literal_string \"blockRewardContract\""
+                                  },
+                                  "value": "blockRewardContract"
+                                }
+                              ],
+                              "expression": {
+                                "argumentTypes": [
+                                  {
+                                    "typeIdentifier": "t_stringliteral_20ae0b8a761b32f3124efb075f427dd6ca669e88ae7747fec9fd1ad688699f32",
+                                    "typeString": "literal_string \"blockRewardContract\""
+                                  }
+                                ],
+                                "expression": {
+                                  "argumentTypes": null,
+                                  "id": 4075,
+                                  "name": "abi",
+                                  "nodeType": "Identifier",
+                                  "overloadedDeclarations": [],
+                                  "referencedDeclaration": 10686,
+                                  "src": "501:3:27",
+                                  "typeDescriptions": {
+                                    "typeIdentifier": "t_magic_abi",
+                                    "typeString": "abi"
+                                  }
+                                },
+                                "id": 4076,
+                                "isConstant": false,
+                                "isLValue": false,
+                                "isPure": true,
+                                "lValueRequested": false,
+                                "memberName": "encodePacked",
+                                "nodeType": "MemberAccess",
+                                "referencedDeclaration": null,
+                                "src": "501:16:27",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_function_abiencodepacked_pure$__$returns$_t_bytes_memory_ptr_$",
+                                  "typeString": "function () pure returns (bytes memory)"
+                                }
+                              },
+                              "id": 4078,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "kind": "functionCall",
+                              "lValueRequested": false,
+                              "names": [],
+                              "nodeType": "FunctionCall",
+                              "src": "501:39:27",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_bytes_memory_ptr",
+                                "typeString": "bytes memory"
+                              }
+                            }
+                          ],
+                          "expression": {
+                            "argumentTypes": [
+                              {
+                                "typeIdentifier": "t_bytes_memory_ptr",
+                                "typeString": "bytes memory"
+                              }
+                            ],
+                            "id": 4074,
+                            "name": "keccak256",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 10693,
+                            "src": "491:9:27",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_function_sha3_pure$__$returns$_t_bytes32_$",
+                              "typeString": "function () pure returns (bytes32)"
+                            }
+                          },
+                          "id": 4079,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "kind": "functionCall",
+                          "lValueRequested": false,
+                          "names": [],
+                          "nodeType": "FunctionCall",
+                          "src": "491:50:27",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bytes32",
+                            "typeString": "bytes32"
+                          }
+                        },
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "nodeType": "IndexAccess",
+                        "src": "476:66:27",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "id": 4072,
+                      "name": "IBlockReward",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 711,
+                      "src": "463:12:27",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_type$_t_contract$_IBlockReward_$711_$",
+                        "typeString": "type(contract IBlockReward)"
+                      }
+                    },
+                    "id": 4081,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "typeConversion",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "463:80:27",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_IBlockReward_$711",
+                      "typeString": "contract IBlockReward"
+                    }
+                  },
+                  "functionReturnParameters": 4071,
+                  "id": 4082,
+                  "nodeType": "Return",
+                  "src": "456:87:27"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 4084,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "_blockRewardContract",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 4068,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "407:2:27"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 4071,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4070,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4084,
+                  "src": "432:12:27",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_IBlockReward_$711",
+                    "typeString": "contract IBlockReward"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 4069,
+                    "name": "IBlockReward",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 711,
+                    "src": "432:12:27",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_IBlockReward_$711",
+                      "typeString": "contract IBlockReward"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "431:14:27"
+            },
+            "scope": 4090,
+            "src": "378:172:27",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "internal"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 4089,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "distributeFeeFromBlockReward",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 4087,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4086,
+                  "name": "_fee",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4089,
+                  "src": "594:12:27",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 4085,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "594:7:27",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "593:14:27"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 4088,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "616:0:27"
+            },
+            "scope": 4090,
+            "src": "556:61:27",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "internal"
+          }
+        ],
+        "scope": 4091,
+        "src": "87:532:27"
+      }
+    ],
+    "src": "0:620:27"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/fbranci/iexecdev/vivani/tokenbridge/contracts/contracts/upgradeable_contracts/BlockRewardFeeManager.sol",
+    "exportedSymbols": {
+      "BlockRewardFeeManager": [
+        4090
+      ]
+    },
+    "id": 4091,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 4043,
+        "literals": [
+          "solidity",
+          "0.4",
+          ".24"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:27"
+      },
+      {
+        "absolutePath": "/Users/fbranci/iexecdev/vivani/tokenbridge/contracts/contracts/upgradeable_contracts/BaseFeeManager.sol",
+        "file": "./BaseFeeManager.sol",
+        "id": 4044,
+        "nodeType": "ImportDirective",
+        "scope": 4091,
+        "sourceUnit": 2589,
+        "src": "25:30:27",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/Users/fbranci/iexecdev/vivani/tokenbridge/contracts/contracts/IBlockReward.sol",
+        "file": "../IBlockReward.sol",
+        "id": 4045,
+        "nodeType": "ImportDirective",
+        "scope": 4091,
+        "sourceUnit": 712,
+        "src": "56:29:27",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 4046,
+              "name": "BaseFeeManager",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 2588,
+              "src": "121:14:27",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_BaseFeeManager_$2588",
+                "typeString": "contract BaseFeeManager"
+              }
+            },
+            "id": 4047,
+            "nodeType": "InheritanceSpecifier",
+            "src": "121:14:27"
+          }
+        ],
+        "contractDependencies": [
+          1701,
+          2588,
+          4493
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": false,
+        "id": 4090,
+        "linearizedBaseContracts": [
+          4090,
+          2588,
+          4493,
+          1701
+        ],
+        "name": "BlockRewardFeeManager",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 4056,
+              "nodeType": "Block",
+              "src": "204:51:27",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 4053,
+                        "name": "_fee",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 4049,
+                        "src": "243:4:27",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      ],
+                      "id": 4052,
+                      "name": "distributeFeeFromBlockReward",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 4089,
+                      "src": "214:28:27",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_uint256_$returns$__$",
+                        "typeString": "function (uint256)"
+                      }
+                    },
+                    "id": 4054,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "214:34:27",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 4055,
+                  "nodeType": "ExpressionStatement",
+                  "src": "214:34:27"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 4057,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "distributeFeeFromAffirmation",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 4050,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4049,
+                  "name": "_fee",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4057,
+                  "src": "181:12:27",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 4048,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "181:7:27",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "180:14:27"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 4051,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "204:0:27"
+            },
+            "scope": 4090,
+            "src": "143:112:27",
+            "stateMutability": "nonpayable",
+            "superFunction": 2557,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 4066,
+              "nodeType": "Block",
+              "src": "321:51:27",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 4063,
+                        "name": "_fee",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 4059,
+                        "src": "360:4:27",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      ],
+                      "id": 4062,
+                      "name": "distributeFeeFromBlockReward",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 4089,
+                      "src": "331:28:27",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_uint256_$returns$__$",
+                        "typeString": "function (uint256)"
+                      }
+                    },
+                    "id": 4064,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "331:34:27",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 4065,
+                  "nodeType": "ExpressionStatement",
+                  "src": "331:34:27"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 4067,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "distributeFeeFromSignatures",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 4060,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4059,
+                  "name": "_fee",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4067,
+                  "src": "298:12:27",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 4058,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "298:7:27",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "297:14:27"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 4061,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "321:0:27"
+            },
+            "scope": 4090,
+            "src": "261:111:27",
+            "stateMutability": "nonpayable",
+            "superFunction": 2562,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 4083,
+              "nodeType": "Block",
+              "src": "446:104:27",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "baseExpression": {
+                          "argumentTypes": null,
+                          "id": 4073,
+                          "name": "addressStorage",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 1688,
+                          "src": "476:14:27",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_mapping$_t_bytes32_$_t_address_$",
+                            "typeString": "mapping(bytes32 => address)"
+                          }
+                        },
+                        "id": 4080,
+                        "indexExpression": {
+                          "argumentTypes": null,
+                          "arguments": [
+                            {
+                              "argumentTypes": null,
+                              "arguments": [
+                                {
+                                  "argumentTypes": null,
+                                  "hexValue": "626c6f636b526577617264436f6e7472616374",
+                                  "id": 4077,
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": true,
+                                  "kind": "string",
+                                  "lValueRequested": false,
+                                  "nodeType": "Literal",
+                                  "src": "518:21:27",
+                                  "subdenomination": null,
+                                  "typeDescriptions": {
+                                    "typeIdentifier": "t_stringliteral_20ae0b8a761b32f3124efb075f427dd6ca669e88ae7747fec9fd1ad688699f32",
+                                    "typeString": "literal_string \"blockRewardContract\""
+                                  },
+                                  "value": "blockRewardContract"
+                                }
+                              ],
+                              "expression": {
+                                "argumentTypes": [
+                                  {
+                                    "typeIdentifier": "t_stringliteral_20ae0b8a761b32f3124efb075f427dd6ca669e88ae7747fec9fd1ad688699f32",
+                                    "typeString": "literal_string \"blockRewardContract\""
+                                  }
+                                ],
+                                "expression": {
+                                  "argumentTypes": null,
+                                  "id": 4075,
+                                  "name": "abi",
+                                  "nodeType": "Identifier",
+                                  "overloadedDeclarations": [],
+                                  "referencedDeclaration": 10686,
+                                  "src": "501:3:27",
+                                  "typeDescriptions": {
+                                    "typeIdentifier": "t_magic_abi",
+                                    "typeString": "abi"
+                                  }
+                                },
+                                "id": 4076,
+                                "isConstant": false,
+                                "isLValue": false,
+                                "isPure": true,
+                                "lValueRequested": false,
+                                "memberName": "encodePacked",
+                                "nodeType": "MemberAccess",
+                                "referencedDeclaration": null,
+                                "src": "501:16:27",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_function_abiencodepacked_pure$__$returns$_t_bytes_memory_ptr_$",
+                                  "typeString": "function () pure returns (bytes memory)"
+                                }
+                              },
+                              "id": 4078,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "kind": "functionCall",
+                              "lValueRequested": false,
+                              "names": [],
+                              "nodeType": "FunctionCall",
+                              "src": "501:39:27",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_bytes_memory_ptr",
+                                "typeString": "bytes memory"
+                              }
+                            }
+                          ],
+                          "expression": {
+                            "argumentTypes": [
+                              {
+                                "typeIdentifier": "t_bytes_memory_ptr",
+                                "typeString": "bytes memory"
+                              }
+                            ],
+                            "id": 4074,
+                            "name": "keccak256",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 10693,
+                            "src": "491:9:27",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_function_sha3_pure$__$returns$_t_bytes32_$",
+                              "typeString": "function () pure returns (bytes32)"
+                            }
+                          },
+                          "id": 4079,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "kind": "functionCall",
+                          "lValueRequested": false,
+                          "names": [],
+                          "nodeType": "FunctionCall",
+                          "src": "491:50:27",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bytes32",
+                            "typeString": "bytes32"
+                          }
+                        },
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "nodeType": "IndexAccess",
+                        "src": "476:66:27",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "id": 4072,
+                      "name": "IBlockReward",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 711,
+                      "src": "463:12:27",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_type$_t_contract$_IBlockReward_$711_$",
+                        "typeString": "type(contract IBlockReward)"
+                      }
+                    },
+                    "id": 4081,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "typeConversion",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "463:80:27",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_IBlockReward_$711",
+                      "typeString": "contract IBlockReward"
+                    }
+                  },
+                  "functionReturnParameters": 4071,
+                  "id": 4082,
+                  "nodeType": "Return",
+                  "src": "456:87:27"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 4084,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "_blockRewardContract",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 4068,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "407:2:27"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 4071,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4070,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4084,
+                  "src": "432:12:27",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_IBlockReward_$711",
+                    "typeString": "contract IBlockReward"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 4069,
+                    "name": "IBlockReward",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 711,
+                    "src": "432:12:27",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_IBlockReward_$711",
+                      "typeString": "contract IBlockReward"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "431:14:27"
+            },
+            "scope": 4090,
+            "src": "378:172:27",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "internal"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 4089,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "distributeFeeFromBlockReward",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 4087,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4086,
+                  "name": "_fee",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4089,
+                  "src": "594:12:27",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 4085,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "594:7:27",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "593:14:27"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 4088,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "616:0:27"
+            },
+            "scope": 4090,
+            "src": "556:61:27",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "internal"
+          }
+        ],
+        "scope": 4091,
+        "src": "87:532:27"
+      }
+    ],
+    "src": "0:620:27"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.4.24+commit.e67f0147.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.0.13",
+  "updatedAt": "2019-08-28T14:04:53.219Z",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}

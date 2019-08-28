@@ -1,0 +1,976 @@
+{
+  "contractName": "IBlockReward",
+  "abi": [
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_amount",
+          "type": "uint256"
+        },
+        {
+          "name": "_receiver",
+          "type": "address"
+        }
+      ],
+      "name": "addExtraReceiver",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "mintedTotally",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "_bridge",
+          "type": "address"
+        }
+      ],
+      "name": "mintedTotallyByBridge",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "bridgesAllowedLength",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "addBridgeTokenFeeReceivers",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "addBridgeNativeFeeReceivers",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "pragma solidity 0.4.24;\n\n\ninterface IBlockReward {\n    function addExtraReceiver(uint256 _amount, address _receiver) external;\n    function mintedTotally() public view returns (uint256);\n    function mintedTotallyByBridge(address _bridge) public view returns(uint256);\n    function bridgesAllowedLength() external view returns(uint256);\n    function addBridgeTokenFeeReceivers(uint256 _amount) external;\n    function addBridgeNativeFeeReceivers(uint256 _amount) external;\n}\n",
+  "sourcePath": "/Users/fbranci/iexecdev/vivani/tokenbridge/contracts/contracts/IBlockReward.sol",
+  "ast": {
+    "absolutePath": "/Users/fbranci/iexecdev/vivani/tokenbridge/contracts/contracts/IBlockReward.sol",
+    "exportedSymbols": {
+      "IBlockReward": [
+        711
+      ]
+    },
+    "id": 712,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 676,
+        "literals": [
+          "solidity",
+          "0.4",
+          ".24"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:4"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": null,
+        "fullyImplemented": false,
+        "id": 711,
+        "linearizedBaseContracts": [
+          711
+        ],
+        "name": "IBlockReward",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": null,
+            "documentation": null,
+            "id": 683,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "addExtraReceiver",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 681,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 678,
+                  "name": "_amount",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 683,
+                  "src": "81:15:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 677,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "81:7:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 680,
+                  "name": "_receiver",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 683,
+                  "src": "98:17:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 679,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "98:7:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "80:36:4"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 682,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "125:0:4"
+            },
+            "scope": 711,
+            "src": "55:71:4",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 688,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "mintedTotally",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 684,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "153:2:4"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 687,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 686,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 688,
+                  "src": "177:7:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 685,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "177:7:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "176:9:4"
+            },
+            "scope": 711,
+            "src": "131:55:4",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 695,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "mintedTotallyByBridge",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 691,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 690,
+                  "name": "_bridge",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 695,
+                  "src": "222:15:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 689,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "222:7:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "221:17:4"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 694,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 693,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 695,
+                  "src": "259:7:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 692,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "259:7:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "258:9:4"
+            },
+            "scope": 711,
+            "src": "191:77:4",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 700,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "bridgesAllowedLength",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 696,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "302:2:4"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 699,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 698,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 700,
+                  "src": "327:7:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 697,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "327:7:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "326:9:4"
+            },
+            "scope": 711,
+            "src": "273:63:4",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 705,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "addBridgeTokenFeeReceivers",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 703,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 702,
+                  "name": "_amount",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 705,
+                  "src": "377:15:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 701,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "377:7:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "376:17:4"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 704,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "402:0:4"
+            },
+            "scope": 711,
+            "src": "341:62:4",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 710,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "addBridgeNativeFeeReceivers",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 708,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 707,
+                  "name": "_amount",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 710,
+                  "src": "445:15:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 706,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "445:7:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "444:17:4"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 709,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "470:0:4"
+            },
+            "scope": 711,
+            "src": "408:63:4",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          }
+        ],
+        "scope": 712,
+        "src": "26:447:4"
+      }
+    ],
+    "src": "0:474:4"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/fbranci/iexecdev/vivani/tokenbridge/contracts/contracts/IBlockReward.sol",
+    "exportedSymbols": {
+      "IBlockReward": [
+        711
+      ]
+    },
+    "id": 712,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 676,
+        "literals": [
+          "solidity",
+          "0.4",
+          ".24"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:4"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": null,
+        "fullyImplemented": false,
+        "id": 711,
+        "linearizedBaseContracts": [
+          711
+        ],
+        "name": "IBlockReward",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": null,
+            "documentation": null,
+            "id": 683,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "addExtraReceiver",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 681,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 678,
+                  "name": "_amount",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 683,
+                  "src": "81:15:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 677,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "81:7:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 680,
+                  "name": "_receiver",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 683,
+                  "src": "98:17:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 679,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "98:7:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "80:36:4"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 682,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "125:0:4"
+            },
+            "scope": 711,
+            "src": "55:71:4",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 688,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "mintedTotally",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 684,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "153:2:4"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 687,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 686,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 688,
+                  "src": "177:7:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 685,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "177:7:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "176:9:4"
+            },
+            "scope": 711,
+            "src": "131:55:4",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 695,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "mintedTotallyByBridge",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 691,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 690,
+                  "name": "_bridge",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 695,
+                  "src": "222:15:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 689,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "222:7:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "221:17:4"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 694,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 693,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 695,
+                  "src": "259:7:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 692,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "259:7:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "258:9:4"
+            },
+            "scope": 711,
+            "src": "191:77:4",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 700,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "bridgesAllowedLength",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 696,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "302:2:4"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 699,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 698,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 700,
+                  "src": "327:7:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 697,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "327:7:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "326:9:4"
+            },
+            "scope": 711,
+            "src": "273:63:4",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 705,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "addBridgeTokenFeeReceivers",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 703,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 702,
+                  "name": "_amount",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 705,
+                  "src": "377:15:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 701,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "377:7:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "376:17:4"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 704,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "402:0:4"
+            },
+            "scope": 711,
+            "src": "341:62:4",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 710,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "addBridgeNativeFeeReceivers",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 708,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 707,
+                  "name": "_amount",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 710,
+                  "src": "445:15:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 706,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "445:7:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "444:17:4"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 709,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "470:0:4"
+            },
+            "scope": 711,
+            "src": "408:63:4",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          }
+        ],
+        "scope": 712,
+        "src": "26:447:4"
+      }
+    ],
+    "src": "0:474:4"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.4.24+commit.e67f0147.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.0.13",
+  "updatedAt": "2019-08-28T14:04:53.149Z",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}

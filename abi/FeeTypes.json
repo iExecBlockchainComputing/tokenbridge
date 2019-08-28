@@ -1,0 +1,628 @@
+{
+  "contractName": "FeeTypes",
+  "abi": [],
+  "metadata": "{\"compiler\":{\"version\":\"0.4.24+commit.e67f0147\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/Users/fbranci/iexecdev/vivani/tokenbridge/contracts/contracts/upgradeable_contracts/FeeTypes.sol\":\"FeeTypes\"},\"evmVersion\":\"byzantium\",\"libraries\":{},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/fbranci/iexecdev/vivani/tokenbridge/contracts/contracts/upgradeable_contracts/FeeTypes.sol\":{\"keccak256\":\"0x24f6e9cdefaed21db9aed51822e8f3248ba26df34e6d210ae50e89bb2331197d\",\"urls\":[\"bzzr://68ebc1d6166ae60dc4ff4fa28e8b09c3a88c8953085072fe474f27fdff523c9e\"]}},\"version\":1}",
+  "bytecode": "0x6080604052348015600f57600080fd5b50603580601d6000396000f3006080604052600080fd00a165627a7a7230582054acbab439f5730c58cc92a55ad72280278e3a9c166421847d0af662f30930580029",
+  "deployedBytecode": "0x6080604052600080fd00a165627a7a7230582054acbab439f5730c58cc92a55ad72280278e3a9c166421847d0af662f30930580029",
+  "sourceMap": "26:191:31:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;26:191:31;;;;;;;",
+  "deployedSourceMap": "26:191:31:-;;;;;",
+  "source": "pragma solidity 0.4.24;\n\n\ncontract FeeTypes {\n    bytes32 internal constant HOME_FEE = keccak256(abi.encodePacked(\"home-fee\"));\n    bytes32 internal constant FOREIGN_FEE = keccak256(abi.encodePacked(\"foreign-fee\"));\n}\n",
+  "sourcePath": "/Users/fbranci/iexecdev/vivani/tokenbridge/contracts/contracts/upgradeable_contracts/FeeTypes.sol",
+  "ast": {
+    "absolutePath": "/Users/fbranci/iexecdev/vivani/tokenbridge/contracts/contracts/upgradeable_contracts/FeeTypes.sol",
+    "exportedSymbols": {
+      "FeeTypes": [
+        4493
+      ]
+    },
+    "id": 4494,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 4476,
+        "literals": [
+          "solidity",
+          "0.4",
+          ".24"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:31"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 4493,
+        "linearizedBaseContracts": [
+          4493
+        ],
+        "name": "FeeTypes",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": true,
+            "id": 4484,
+            "name": "HOME_FEE",
+            "nodeType": "VariableDeclaration",
+            "scope": 4493,
+            "src": "50:76:31",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_bytes32",
+              "typeString": "bytes32"
+            },
+            "typeName": {
+              "id": 4477,
+              "name": "bytes32",
+              "nodeType": "ElementaryTypeName",
+              "src": "50:7:31",
+              "typeDescriptions": {
+                "typeIdentifier": "t_bytes32",
+                "typeString": "bytes32"
+              }
+            },
+            "value": {
+              "argumentTypes": null,
+              "arguments": [
+                {
+                  "argumentTypes": null,
+                  "arguments": [
+                    {
+                      "argumentTypes": null,
+                      "hexValue": "686f6d652d666565",
+                      "id": 4481,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "string",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "114:10:31",
+                      "subdenomination": null,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_stringliteral_89d93e5e92f7e37e490c25f0e50f7f4aad7cc94b308a566553280967be38bcf1",
+                        "typeString": "literal_string \"home-fee\""
+                      },
+                      "value": "home-fee"
+                    }
+                  ],
+                  "expression": {
+                    "argumentTypes": [
+                      {
+                        "typeIdentifier": "t_stringliteral_89d93e5e92f7e37e490c25f0e50f7f4aad7cc94b308a566553280967be38bcf1",
+                        "typeString": "literal_string \"home-fee\""
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": null,
+                      "id": 4479,
+                      "name": "abi",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 10686,
+                      "src": "97:3:31",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_magic_abi",
+                        "typeString": "abi"
+                      }
+                    },
+                    "id": 4480,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": true,
+                    "lValueRequested": false,
+                    "memberName": "encodePacked",
+                    "nodeType": "MemberAccess",
+                    "referencedDeclaration": null,
+                    "src": "97:16:31",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_function_abiencodepacked_pure$__$returns$_t_bytes_memory_ptr_$",
+                      "typeString": "function () pure returns (bytes memory)"
+                    }
+                  },
+                  "id": 4482,
+                  "isConstant": false,
+                  "isLValue": false,
+                  "isPure": true,
+                  "kind": "functionCall",
+                  "lValueRequested": false,
+                  "names": [],
+                  "nodeType": "FunctionCall",
+                  "src": "97:28:31",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_memory_ptr",
+                    "typeString": "bytes memory"
+                  }
+                }
+              ],
+              "expression": {
+                "argumentTypes": [
+                  {
+                    "typeIdentifier": "t_bytes_memory_ptr",
+                    "typeString": "bytes memory"
+                  }
+                ],
+                "id": 4478,
+                "name": "keccak256",
+                "nodeType": "Identifier",
+                "overloadedDeclarations": [],
+                "referencedDeclaration": 10693,
+                "src": "87:9:31",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_function_sha3_pure$__$returns$_t_bytes32_$",
+                  "typeString": "function () pure returns (bytes32)"
+                }
+              },
+              "id": 4483,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "functionCall",
+              "lValueRequested": false,
+              "names": [],
+              "nodeType": "FunctionCall",
+              "src": "87:39:31",
+              "typeDescriptions": {
+                "typeIdentifier": "t_bytes32",
+                "typeString": "bytes32"
+              }
+            },
+            "visibility": "internal"
+          },
+          {
+            "constant": true,
+            "id": 4492,
+            "name": "FOREIGN_FEE",
+            "nodeType": "VariableDeclaration",
+            "scope": 4493,
+            "src": "132:82:31",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_bytes32",
+              "typeString": "bytes32"
+            },
+            "typeName": {
+              "id": 4485,
+              "name": "bytes32",
+              "nodeType": "ElementaryTypeName",
+              "src": "132:7:31",
+              "typeDescriptions": {
+                "typeIdentifier": "t_bytes32",
+                "typeString": "bytes32"
+              }
+            },
+            "value": {
+              "argumentTypes": null,
+              "arguments": [
+                {
+                  "argumentTypes": null,
+                  "arguments": [
+                    {
+                      "argumentTypes": null,
+                      "hexValue": "666f726569676e2d666565",
+                      "id": 4489,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "string",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "199:13:31",
+                      "subdenomination": null,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_stringliteral_deb7f3adca07d6d1f708c1774389db532a2b2f18fd05a62b957e4089f4696ed5",
+                        "typeString": "literal_string \"foreign-fee\""
+                      },
+                      "value": "foreign-fee"
+                    }
+                  ],
+                  "expression": {
+                    "argumentTypes": [
+                      {
+                        "typeIdentifier": "t_stringliteral_deb7f3adca07d6d1f708c1774389db532a2b2f18fd05a62b957e4089f4696ed5",
+                        "typeString": "literal_string \"foreign-fee\""
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": null,
+                      "id": 4487,
+                      "name": "abi",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 10686,
+                      "src": "182:3:31",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_magic_abi",
+                        "typeString": "abi"
+                      }
+                    },
+                    "id": 4488,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": true,
+                    "lValueRequested": false,
+                    "memberName": "encodePacked",
+                    "nodeType": "MemberAccess",
+                    "referencedDeclaration": null,
+                    "src": "182:16:31",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_function_abiencodepacked_pure$__$returns$_t_bytes_memory_ptr_$",
+                      "typeString": "function () pure returns (bytes memory)"
+                    }
+                  },
+                  "id": 4490,
+                  "isConstant": false,
+                  "isLValue": false,
+                  "isPure": true,
+                  "kind": "functionCall",
+                  "lValueRequested": false,
+                  "names": [],
+                  "nodeType": "FunctionCall",
+                  "src": "182:31:31",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_memory_ptr",
+                    "typeString": "bytes memory"
+                  }
+                }
+              ],
+              "expression": {
+                "argumentTypes": [
+                  {
+                    "typeIdentifier": "t_bytes_memory_ptr",
+                    "typeString": "bytes memory"
+                  }
+                ],
+                "id": 4486,
+                "name": "keccak256",
+                "nodeType": "Identifier",
+                "overloadedDeclarations": [],
+                "referencedDeclaration": 10693,
+                "src": "172:9:31",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_function_sha3_pure$__$returns$_t_bytes32_$",
+                  "typeString": "function () pure returns (bytes32)"
+                }
+              },
+              "id": 4491,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "functionCall",
+              "lValueRequested": false,
+              "names": [],
+              "nodeType": "FunctionCall",
+              "src": "172:42:31",
+              "typeDescriptions": {
+                "typeIdentifier": "t_bytes32",
+                "typeString": "bytes32"
+              }
+            },
+            "visibility": "internal"
+          }
+        ],
+        "scope": 4494,
+        "src": "26:191:31"
+      }
+    ],
+    "src": "0:218:31"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/fbranci/iexecdev/vivani/tokenbridge/contracts/contracts/upgradeable_contracts/FeeTypes.sol",
+    "exportedSymbols": {
+      "FeeTypes": [
+        4493
+      ]
+    },
+    "id": 4494,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 4476,
+        "literals": [
+          "solidity",
+          "0.4",
+          ".24"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:31"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 4493,
+        "linearizedBaseContracts": [
+          4493
+        ],
+        "name": "FeeTypes",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": true,
+            "id": 4484,
+            "name": "HOME_FEE",
+            "nodeType": "VariableDeclaration",
+            "scope": 4493,
+            "src": "50:76:31",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_bytes32",
+              "typeString": "bytes32"
+            },
+            "typeName": {
+              "id": 4477,
+              "name": "bytes32",
+              "nodeType": "ElementaryTypeName",
+              "src": "50:7:31",
+              "typeDescriptions": {
+                "typeIdentifier": "t_bytes32",
+                "typeString": "bytes32"
+              }
+            },
+            "value": {
+              "argumentTypes": null,
+              "arguments": [
+                {
+                  "argumentTypes": null,
+                  "arguments": [
+                    {
+                      "argumentTypes": null,
+                      "hexValue": "686f6d652d666565",
+                      "id": 4481,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "string",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "114:10:31",
+                      "subdenomination": null,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_stringliteral_89d93e5e92f7e37e490c25f0e50f7f4aad7cc94b308a566553280967be38bcf1",
+                        "typeString": "literal_string \"home-fee\""
+                      },
+                      "value": "home-fee"
+                    }
+                  ],
+                  "expression": {
+                    "argumentTypes": [
+                      {
+                        "typeIdentifier": "t_stringliteral_89d93e5e92f7e37e490c25f0e50f7f4aad7cc94b308a566553280967be38bcf1",
+                        "typeString": "literal_string \"home-fee\""
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": null,
+                      "id": 4479,
+                      "name": "abi",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 10686,
+                      "src": "97:3:31",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_magic_abi",
+                        "typeString": "abi"
+                      }
+                    },
+                    "id": 4480,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": true,
+                    "lValueRequested": false,
+                    "memberName": "encodePacked",
+                    "nodeType": "MemberAccess",
+                    "referencedDeclaration": null,
+                    "src": "97:16:31",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_function_abiencodepacked_pure$__$returns$_t_bytes_memory_ptr_$",
+                      "typeString": "function () pure returns (bytes memory)"
+                    }
+                  },
+                  "id": 4482,
+                  "isConstant": false,
+                  "isLValue": false,
+                  "isPure": true,
+                  "kind": "functionCall",
+                  "lValueRequested": false,
+                  "names": [],
+                  "nodeType": "FunctionCall",
+                  "src": "97:28:31",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_memory_ptr",
+                    "typeString": "bytes memory"
+                  }
+                }
+              ],
+              "expression": {
+                "argumentTypes": [
+                  {
+                    "typeIdentifier": "t_bytes_memory_ptr",
+                    "typeString": "bytes memory"
+                  }
+                ],
+                "id": 4478,
+                "name": "keccak256",
+                "nodeType": "Identifier",
+                "overloadedDeclarations": [],
+                "referencedDeclaration": 10693,
+                "src": "87:9:31",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_function_sha3_pure$__$returns$_t_bytes32_$",
+                  "typeString": "function () pure returns (bytes32)"
+                }
+              },
+              "id": 4483,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "functionCall",
+              "lValueRequested": false,
+              "names": [],
+              "nodeType": "FunctionCall",
+              "src": "87:39:31",
+              "typeDescriptions": {
+                "typeIdentifier": "t_bytes32",
+                "typeString": "bytes32"
+              }
+            },
+            "visibility": "internal"
+          },
+          {
+            "constant": true,
+            "id": 4492,
+            "name": "FOREIGN_FEE",
+            "nodeType": "VariableDeclaration",
+            "scope": 4493,
+            "src": "132:82:31",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_bytes32",
+              "typeString": "bytes32"
+            },
+            "typeName": {
+              "id": 4485,
+              "name": "bytes32",
+              "nodeType": "ElementaryTypeName",
+              "src": "132:7:31",
+              "typeDescriptions": {
+                "typeIdentifier": "t_bytes32",
+                "typeString": "bytes32"
+              }
+            },
+            "value": {
+              "argumentTypes": null,
+              "arguments": [
+                {
+                  "argumentTypes": null,
+                  "arguments": [
+                    {
+                      "argumentTypes": null,
+                      "hexValue": "666f726569676e2d666565",
+                      "id": 4489,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "string",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "199:13:31",
+                      "subdenomination": null,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_stringliteral_deb7f3adca07d6d1f708c1774389db532a2b2f18fd05a62b957e4089f4696ed5",
+                        "typeString": "literal_string \"foreign-fee\""
+                      },
+                      "value": "foreign-fee"
+                    }
+                  ],
+                  "expression": {
+                    "argumentTypes": [
+                      {
+                        "typeIdentifier": "t_stringliteral_deb7f3adca07d6d1f708c1774389db532a2b2f18fd05a62b957e4089f4696ed5",
+                        "typeString": "literal_string \"foreign-fee\""
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": null,
+                      "id": 4487,
+                      "name": "abi",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 10686,
+                      "src": "182:3:31",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_magic_abi",
+                        "typeString": "abi"
+                      }
+                    },
+                    "id": 4488,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": true,
+                    "lValueRequested": false,
+                    "memberName": "encodePacked",
+                    "nodeType": "MemberAccess",
+                    "referencedDeclaration": null,
+                    "src": "182:16:31",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_function_abiencodepacked_pure$__$returns$_t_bytes_memory_ptr_$",
+                      "typeString": "function () pure returns (bytes memory)"
+                    }
+                  },
+                  "id": 4490,
+                  "isConstant": false,
+                  "isLValue": false,
+                  "isPure": true,
+                  "kind": "functionCall",
+                  "lValueRequested": false,
+                  "names": [],
+                  "nodeType": "FunctionCall",
+                  "src": "182:31:31",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_memory_ptr",
+                    "typeString": "bytes memory"
+                  }
+                }
+              ],
+              "expression": {
+                "argumentTypes": [
+                  {
+                    "typeIdentifier": "t_bytes_memory_ptr",
+                    "typeString": "bytes memory"
+                  }
+                ],
+                "id": 4486,
+                "name": "keccak256",
+                "nodeType": "Identifier",
+                "overloadedDeclarations": [],
+                "referencedDeclaration": 10693,
+                "src": "172:9:31",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_function_sha3_pure$__$returns$_t_bytes32_$",
+                  "typeString": "function () pure returns (bytes32)"
+                }
+              },
+              "id": 4491,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "functionCall",
+              "lValueRequested": false,
+              "names": [],
+              "nodeType": "FunctionCall",
+              "src": "172:42:31",
+              "typeDescriptions": {
+                "typeIdentifier": "t_bytes32",
+                "typeString": "bytes32"
+              }
+            },
+            "visibility": "internal"
+          }
+        ],
+        "scope": 4494,
+        "src": "26:191:31"
+      }
+    ],
+    "src": "0:218:31"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.4.24+commit.e67f0147.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.0.13",
+  "updatedAt": "2019-08-28T14:04:53.242Z",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}

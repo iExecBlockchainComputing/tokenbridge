@@ -1,0 +1,231 @@
+{
+  "contractName": "IOwnedUpgradeabilityProxy",
+  "abi": [
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "proxyOwner",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "metadata": "",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "pragma solidity 0.4.24;\n\n\ninterface IOwnedUpgradeabilityProxy {\n    function proxyOwner() public view returns (address);\n}\n",
+  "sourcePath": "/Users/fbranci/iexecdev/vivani/tokenbridge/contracts/contracts/IOwnedUpgradeabilityProxy.sol",
+  "ast": {
+    "absolutePath": "/Users/fbranci/iexecdev/vivani/tokenbridge/contracts/contracts/IOwnedUpgradeabilityProxy.sol",
+    "exportedSymbols": {
+      "IOwnedUpgradeabilityProxy": [
+        766
+      ]
+    },
+    "id": 767,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 760,
+        "literals": [
+          "solidity",
+          "0.4",
+          ".24"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:7"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": null,
+        "fullyImplemented": false,
+        "id": 766,
+        "linearizedBaseContracts": [
+          766
+        ],
+        "name": "IOwnedUpgradeabilityProxy",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": null,
+            "documentation": null,
+            "id": 765,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "proxyOwner",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 761,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "87:2:7"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 764,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 763,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 765,
+                  "src": "111:7:7",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 762,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "111:7:7",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "110:9:7"
+            },
+            "scope": 766,
+            "src": "68:52:7",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 767,
+        "src": "26:96:7"
+      }
+    ],
+    "src": "0:123:7"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/fbranci/iexecdev/vivani/tokenbridge/contracts/contracts/IOwnedUpgradeabilityProxy.sol",
+    "exportedSymbols": {
+      "IOwnedUpgradeabilityProxy": [
+        766
+      ]
+    },
+    "id": 767,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 760,
+        "literals": [
+          "solidity",
+          "0.4",
+          ".24"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:7"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": null,
+        "fullyImplemented": false,
+        "id": 766,
+        "linearizedBaseContracts": [
+          766
+        ],
+        "name": "IOwnedUpgradeabilityProxy",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": null,
+            "documentation": null,
+            "id": 765,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "proxyOwner",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 761,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "87:2:7"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 764,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 763,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 765,
+                  "src": "111:7:7",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 762,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "111:7:7",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "110:9:7"
+            },
+            "scope": 766,
+            "src": "68:52:7",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 767,
+        "src": "26:96:7"
+      }
+    ],
+    "src": "0:123:7"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.4.24+commit.e67f0147.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.0.13",
+  "updatedAt": "2019-08-28T14:04:53.152Z",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}

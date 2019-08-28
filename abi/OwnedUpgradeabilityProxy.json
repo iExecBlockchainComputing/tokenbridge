@@ -1,0 +1,3185 @@
+{
+  "contractName": "OwnedUpgradeabilityProxy",
+  "abi": [
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "version",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "implementation",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "upgradeabilityOwner",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "payable": true,
+      "stateMutability": "payable",
+      "type": "fallback"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "name": "previousOwner",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "ProxyOwnershipTransferred",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "name": "version",
+          "type": "uint256"
+        },
+        {
+          "indexed": true,
+          "name": "implementation",
+          "type": "address"
+        }
+      ],
+      "name": "Upgraded",
+      "type": "event"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "proxyOwner",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "transferProxyOwnership",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "version",
+          "type": "uint256"
+        },
+        {
+          "name": "implementation",
+          "type": "address"
+        }
+      ],
+      "name": "upgradeTo",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "version",
+          "type": "uint256"
+        },
+        {
+          "name": "implementation",
+          "type": "address"
+        },
+        {
+          "name": "data",
+          "type": "bytes"
+        }
+      ],
+      "name": "upgradeToAndCall",
+      "outputs": [],
+      "payable": true,
+      "stateMutability": "payable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.4.24+commit.e67f0147\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":true,\"inputs\":[],\"name\":\"proxyOwner\",\"outputs\":[{\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"version\",\"type\":\"uint256\"},{\"name\":\"implementation\",\"type\":\"address\"}],\"name\":\"upgradeTo\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"version\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"implementation\",\"outputs\":[{\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"upgradeabilityOwner\",\"outputs\":[{\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"version\",\"type\":\"uint256\"},{\"name\":\"implementation\",\"type\":\"address\"},{\"name\":\"data\",\"type\":\"bytes\"}],\"name\":\"upgradeToAndCall\",\"outputs\":[],\"payable\":true,\"stateMutability\":\"payable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"transferProxyOwnership\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"payable\":true,\"stateMutability\":\"payable\",\"type\":\"fallback\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"name\":\"previousOwner\",\"type\":\"address\"},{\"indexed\":false,\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"ProxyOwnershipTransferred\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"name\":\"version\",\"type\":\"uint256\"},{\"indexed\":true,\"name\":\"implementation\",\"type\":\"address\"}],\"name\":\"Upgraded\",\"type\":\"event\"}],\"devdoc\":{\"methods\":{\"implementation()\":{\"details\":\"Tells the address of the current implementation\",\"return\":\"address of the current implementation\"},\"proxyOwner()\":{\"details\":\"Tells the address of the proxy owner\",\"return\":\"the address of the proxy owner\"},\"transferProxyOwnership(address)\":{\"details\":\"Allows the current owner to transfer control of the contract to a newOwner.\",\"params\":{\"newOwner\":\"The address to transfer ownership to.\"}},\"upgradeTo(uint256,address)\":{\"details\":\"Allows the upgradeability owner to upgrade the current version of the proxy.\",\"params\":{\"implementation\":\"representing the address of the new implementation to be set.\",\"version\":\"representing the version name of the new implementation to be set.\"}},\"upgradeToAndCall(uint256,address,bytes)\":{\"details\":\"Allows the upgradeability owner to upgrade the current version of the proxy and call the new implementation to initialize whatever is needed through a low level call.\",\"params\":{\"data\":\"represents the msg.data to bet sent in the low level call. This parameter may include the function signature of the implementation to be called with the needed payload\",\"implementation\":\"representing the address of the new implementation to be set.\",\"version\":\"representing the version name of the new implementation to be set.\"}},\"upgradeabilityOwner()\":{\"details\":\"Tells the address of the owner\",\"return\":\"the address of the owner\"},\"version()\":{\"details\":\"Tells the version name of the current implementation\",\"return\":\"string representing the name of the current version\"}},\"title\":\"OwnedUpgradeabilityProxy\"},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/Users/fbranci/iexecdev/vivani/tokenbridge/contracts/contracts/upgradeability/OwnedUpgradeabilityProxy.sol\":\"OwnedUpgradeabilityProxy\"},\"evmVersion\":\"byzantium\",\"libraries\":{},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/fbranci/iexecdev/vivani/tokenbridge/contracts/contracts/upgradeability/OwnedUpgradeabilityProxy.sol\":{\"keccak256\":\"0x4573a1a432a5e8dd63255e11fe6ba27c2f4717640373a3abb4be8d7dcd1fbae9\",\"urls\":[\"bzzr://6415e826cb5858b162e62c2cd5ba614c48ef7fe1314e1170a3cf83ce6e80605d\"]},\"/Users/fbranci/iexecdev/vivani/tokenbridge/contracts/contracts/upgradeability/Proxy.sol\":{\"keccak256\":\"0xe17d45a5ad228bd538700eb08d4e1fcdf0495f552ba0328abd28a5d10302c4e3\",\"urls\":[\"bzzr://b5dd3beaec27fa0f18b80f0a8b94deb33c1f64f7b8f7708f6fb725cc99b9e5b1\"]},\"/Users/fbranci/iexecdev/vivani/tokenbridge/contracts/contracts/upgradeability/UpgradeabilityOwnerStorage.sol\":{\"keccak256\":\"0x731b7f843213e5c22df53e821cdcace5732ddf9fcb4fe241ddb7067ae341f159\",\"urls\":[\"bzzr://e60e047df3528363ef3ec4313cf55cefdfee722c343b6bd44d00187ac5058be8\"]},\"/Users/fbranci/iexecdev/vivani/tokenbridge/contracts/contracts/upgradeability/UpgradeabilityProxy.sol\":{\"keccak256\":\"0x6942a3ee5f504cb3c63e0ccab3154c6b23a502f3453b65e124eea83ae4bb526f\",\"urls\":[\"bzzr://628552a1c2aa3bd92ad419b1f8b5652dba567273615bef4ab3708543a29cfe9e\"]},\"/Users/fbranci/iexecdev/vivani/tokenbridge/contracts/contracts/upgradeability/UpgradeabilityStorage.sol\":{\"keccak256\":\"0xd3a51970d469edf05a792ab1a6b8b3e3386fe07a33a8ae08bd6d4562ca7f298b\",\"urls\":[\"bzzr://ca74fe80d5725773022f1ec811d7bfc4a5d5a072a38078da5043d2dbfd7533f5\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b5061002333640100000000610028810204565b61004a565b60008054600160a060020a031916600160a060020a0392909216919091179055565b610471806100596000396000f3006080604052600436106100825763ffffffff7c0100000000000000000000000000000000000000000000000000000000600035041663025313a281146100cd5780633ad06d16146100fe57806354fd4d50146101245780635c60da1b1461014b5780636fde820214610160578063a9c45fcb14610175578063f1739cae146101d1575b600061008c6101f2565b9050600160a060020a03811615156100a357600080fd5b60405136600082376000803683855af43d82016040523d6000833e8080156100c9573d83f35b3d83fd5b3480156100d957600080fd5b506100e2610201565b60408051600160a060020a039092168252519081900360200190f35b34801561010a57600080fd5b50610122600435600160a060020a0360243516610210565b005b34801561013057600080fd5b5061013961023a565b60408051918252519081900360200190f35b34801561015757600080fd5b506100e26101f2565b34801561016c57600080fd5b506100e2610240565b604080516020600460443581810135601f81018490048402850184019095528484526101229482359460248035600160a060020a03169536959460649492019190819084018382808284375094975061024f9650505050505050565b3480156101dd57600080fd5b50610122600160a060020a03600435166102fd565b600254600160a060020a031690565b600061020b610240565b905090565b610218610201565b600160a060020a0316331461022c57600080fd5b6102368282610385565b5050565b60015490565b600054600160a060020a031690565b610257610201565b600160a060020a0316331461026b57600080fd5b6102758383610210565b30600160a060020a0316348260405180828051906020019080838360005b838110156102ab578181015183820152602001610293565b50505050905090810190601f1680156102d85780820380516001836020036101000a031916815260200191505b5091505060006040518083038185875af19250505015156102f857600080fd5b505050565b610305610201565b600160a060020a0316331461031957600080fd5b600160a060020a038116151561032e57600080fd5b7f5a3e66efaa1e445ebd894728a69d6959842ea1e97bd79b892797106e270efcd9610357610201565b60408051600160a060020a03928316815291841660208301528051918290030190a161038281610416565b50565b600254600160a060020a03828116911614156103a057600080fd5b60015482116103ae57600080fd5b600182905560028054600160a060020a03831673ffffffffffffffffffffffffffffffffffffffff1990911681179091556040805184815290517f4289d6195cf3c2d2174adf98d0e19d4d2d08887995b99cb7b100e7ffe795820e9181900360200190a25050565b6000805473ffffffffffffffffffffffffffffffffffffffff1916600160a060020a03929092169190911790555600a165627a7a72305820e00b73869d3cb09c8f470ed00379649a6a1bf78c896c967ce3fb103841e2cffa0029",
+  "deployedBytecode": "0x6080604052600436106100825763ffffffff7c0100000000000000000000000000000000000000000000000000000000600035041663025313a281146100cd5780633ad06d16146100fe57806354fd4d50146101245780635c60da1b1461014b5780636fde820214610160578063a9c45fcb14610175578063f1739cae146101d1575b600061008c6101f2565b9050600160a060020a03811615156100a357600080fd5b60405136600082376000803683855af43d82016040523d6000833e8080156100c9573d83f35b3d83fd5b3480156100d957600080fd5b506100e2610201565b60408051600160a060020a039092168252519081900360200190f35b34801561010a57600080fd5b50610122600435600160a060020a0360243516610210565b005b34801561013057600080fd5b5061013961023a565b60408051918252519081900360200190f35b34801561015757600080fd5b506100e26101f2565b34801561016c57600080fd5b506100e2610240565b604080516020600460443581810135601f81018490048402850184019095528484526101229482359460248035600160a060020a03169536959460649492019190819084018382808284375094975061024f9650505050505050565b3480156101dd57600080fd5b50610122600160a060020a03600435166102fd565b600254600160a060020a031690565b600061020b610240565b905090565b610218610201565b600160a060020a0316331461022c57600080fd5b6102368282610385565b5050565b60015490565b600054600160a060020a031690565b610257610201565b600160a060020a0316331461026b57600080fd5b6102758383610210565b30600160a060020a0316348260405180828051906020019080838360005b838110156102ab578181015183820152602001610293565b50505050905090810190601f1680156102d85780820380516001836020036101000a031916815260200191505b5091505060006040518083038185875af19250505015156102f857600080fd5b505050565b610305610201565b600160a060020a0316331461031957600080fd5b600160a060020a038116151561032e57600080fd5b7f5a3e66efaa1e445ebd894728a69d6959842ea1e97bd79b892797106e270efcd9610357610201565b60408051600160a060020a03928316815291841660208301528051918290030190a161038281610416565b50565b600254600160a060020a03828116911614156103a057600080fd5b60015482116103ae57600080fd5b600182905560028054600160a060020a03831673ffffffffffffffffffffffffffffffffffffffff1990911681179091556040805184815290517f4289d6195cf3c2d2174adf98d0e19d4d2d08887995b99cb7b100e7ffe795820e9181900360200190a25050565b6000805473ffffffffffffffffffffffffffffffffffffffff1916600160a060020a03929092169190911790555600a165627a7a72305820e00b73869d3cb09c8f470ed00379649a6a1bf78c896c967ce3fb103841e2cffa0029",
+  "sourceMap": "253:2544:17:-;;;727:72;8:9:-1;5:2;;;30:1;27;20:12;5:2;-1:-1;758:34:17;781:10;758:22;;;;:34;:::i;:::-;253:2544;;510:135:19;593:20;:45;;-1:-1:-1;;;;;;593:45:19;-1:-1:-1;;;;;593:45:19;;;;;;;;;;510:135::o;253:2544:17:-;;;;;;;",
+  "deployedSourceMap": "253:2544:17:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;592:13:18;608:16;:14;:16::i;:::-;592:32;-1:-1:-1;;;;;;642:19:18;;;;634:28;;;;;;1092:4;1086:11;1862:12;1859:1;1854:3;1841:34;2775:1;2772;2758:12;2753:3;2746:5;2741:3;2728:49;3451:14;3446:3;3442:24;3436:4;3429:38;3954:14;3951:1;3946:3;3931:38;4229:6;4248:38;;;;4321:14;4316:3;4309:27;4248:38;4269:14;4264:3;4257:27;1088:97:17;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1088:97:17;;;;;;;;-1:-1:-1;;;;;1088:97:17;;;;;;;;;;;;;;1866:134;;8:9:-1;5:2;;;30:1;27;20:12;5:2;-1:-1;1866:134:17;;;-1:-1:-1;;;;;1866:134:17;;;;;;;513:81:21;;8:9:-1;5:2;;;30:1;27;20:12;5:2;513:81:21;;;;;;;;;;;;;;;;;;;;726:95;;8:9:-1;5:2;;;30:1;27;20:12;5:2;726:95:21;;;;343:105:19;;8:9:-1;5:2;;;30:1;27;20:12;5:2;343:105:19;;;;2575:220:17;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;;;2575:220:17;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;2575:220:17;;-1:-1:-1;2575:220:17;;-1:-1:-1;;;;;;;2575:220:17;1353:226;;8:9:-1;5:2;;;30:1;27;20:12;5:2;-1:-1;1353:226:17;-1:-1:-1;;;;;1353:226:17;;;;;726:95:21;799:15;;-1:-1:-1;;;;;799:15:21;726:95;:::o;1088:97:17:-;1131:7;1157:21;:19;:21::i;:::-;1150:28;;1088:97;:::o;1866:134::-;943:12;:10;:12::i;:::-;-1:-1:-1;;;;;929:26:17;:10;:26;921:35;;;;;;1958;1969:7;1978:14;1958:10;:35::i;:::-;1866:134;;:::o;513:81:21:-;579:8;;513:81;:::o;343:105:19:-;395:7;421:20;-1:-1:-1;;;;;421:20:19;343:105;:::o;2575:220:17:-;943:12;:10;:12::i;:::-;-1:-1:-1;;;;;929:26:17;:10;:26;921:35;;;;;;2694:34;2704:7;2713:14;2694:9;:34::i;:::-;2754:4;-1:-1:-1;;;;;2746:18:17;2771:9;2782:4;2746:41;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;90:11;;;84:18;71:11;;;64:39;52:2;45:10;8:100;;;12:14;2746:41:17;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;2738:50;;;;;;;;2575:220;;;:::o;1353:226::-;943:12;:10;:12::i;:::-;-1:-1:-1;;;;;929:26:17;:10;:26;921:35;;;;;;-1:-1:-1;;;;;1443:22:17;;;;1435:31;;;;;;1481:49;1507:12;:10;:12::i;:::-;1481:49;;;-1:-1:-1;;;;;1481:49:17;;;;;;;;;;;;;;;;;;;;;1540:32;1563:8;1540:22;:32::i;:::-;1353:226;:::o;879:284:20:-;967:15;;-1:-1:-1;;;;;967:33:20;;;:15;;:33;;959:42;;;;;;1029:8;;1019:18;;1011:27;;;;;;1048:8;:18;;;1076:15;:32;;-1:-1:-1;;;;;1076:32:20;;-1:-1:-1;;1076:32:20;;;;;;;;1123:33;;;;;;;;;;;;;;;;;879:284;;:::o;510:135:19:-;593:20;:45;;-1:-1:-1;;593:45:19;-1:-1:-1;;;;;593:45:19;;;;;;;;;;510:135::o",
+  "source": "pragma solidity 0.4.24;\n\nimport \"./UpgradeabilityProxy.sol\";\nimport \"./UpgradeabilityOwnerStorage.sol\";\n\n\n/**\n * @title OwnedUpgradeabilityProxy\n * @dev This contract combines an upgradeability proxy with basic authorization control functionalities\n */\ncontract OwnedUpgradeabilityProxy is UpgradeabilityOwnerStorage, UpgradeabilityProxy {\n  /**\n  * @dev Event to show ownership has been transferred\n  * @param previousOwner representing the address of the previous owner\n  * @param newOwner representing the address of the new owner\n  */\n    event ProxyOwnershipTransferred(address previousOwner, address newOwner);\n\n    /**\n    * @dev the constructor sets the original owner of the contract to the sender account.\n    */\n    constructor() public {\n        setUpgradeabilityOwner(msg.sender);\n    }\n\n    /**\n    * @dev Throws if called by any account other than the owner.\n    */\n    modifier onlyProxyOwner() {\n        require(msg.sender == proxyOwner());\n        _;\n    }\n\n    /**\n    * @dev Tells the address of the proxy owner\n    * @return the address of the proxy owner\n    */\n    function proxyOwner() public view returns (address) {\n        return upgradeabilityOwner();\n    }\n\n    /**\n    * @dev Allows the current owner to transfer control of the contract to a newOwner.\n    * @param newOwner The address to transfer ownership to.\n    */\n    function transferProxyOwnership(address newOwner) public onlyProxyOwner {\n        require(newOwner != address(0));\n        emit ProxyOwnershipTransferred(proxyOwner(), newOwner);\n        setUpgradeabilityOwner(newOwner);\n    }\n\n    /**\n    * @dev Allows the upgradeability owner to upgrade the current version of the proxy.\n    * @param version representing the version name of the new implementation to be set.\n    * @param implementation representing the address of the new implementation to be set.\n    */\n    function upgradeTo(uint256 version, address implementation) public onlyProxyOwner {\n        _upgradeTo(version, implementation);\n    }\n\n    /**\n    * @dev Allows the upgradeability owner to upgrade the current version of the proxy and call the new implementation\n    * to initialize whatever is needed through a low level call.\n    * @param version representing the version name of the new implementation to be set.\n    * @param implementation representing the address of the new implementation to be set.\n    * @param data represents the msg.data to bet sent in the low level call. This parameter may include the function\n    * signature of the implementation to be called with the needed payload\n    */\n    function upgradeToAndCall(uint256 version, address implementation, bytes data) payable public onlyProxyOwner {\n        upgradeTo(version, implementation);\n        require(address(this).call.value(msg.value)(data));\n    }\n}\n",
+  "sourcePath": "/Users/fbranci/iexecdev/vivani/tokenbridge/contracts/contracts/upgradeability/OwnedUpgradeabilityProxy.sol",
+  "ast": {
+    "absolutePath": "/Users/fbranci/iexecdev/vivani/tokenbridge/contracts/contracts/upgradeability/OwnedUpgradeabilityProxy.sol",
+    "exportedSymbols": {
+      "OwnedUpgradeabilityProxy": [
+        1826
+      ]
+    },
+    "id": 1827,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1712,
+        "literals": [
+          "solidity",
+          "0.4",
+          ".24"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:17"
+      },
+      {
+        "absolutePath": "/Users/fbranci/iexecdev/vivani/tokenbridge/contracts/contracts/upgradeability/UpgradeabilityProxy.sol",
+        "file": "./UpgradeabilityProxy.sol",
+        "id": 1713,
+        "nodeType": "ImportDirective",
+        "scope": 1827,
+        "sourceUnit": 1924,
+        "src": "25:35:17",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/Users/fbranci/iexecdev/vivani/tokenbridge/contracts/contracts/upgradeability/UpgradeabilityOwnerStorage.sol",
+        "file": "./UpgradeabilityOwnerStorage.sol",
+        "id": 1714,
+        "nodeType": "ImportDirective",
+        "scope": 1827,
+        "sourceUnit": 1876,
+        "src": "61:42:17",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 1715,
+              "name": "UpgradeabilityOwnerStorage",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 1875,
+              "src": "290:26:17",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_UpgradeabilityOwnerStorage_$1875",
+                "typeString": "contract UpgradeabilityOwnerStorage"
+              }
+            },
+            "id": 1716,
+            "nodeType": "InheritanceSpecifier",
+            "src": "290:26:17"
+          },
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 1717,
+              "name": "UpgradeabilityProxy",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 1923,
+              "src": "318:19:17",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_UpgradeabilityProxy_$1923",
+                "typeString": "contract UpgradeabilityProxy"
+              }
+            },
+            "id": 1718,
+            "nodeType": "InheritanceSpecifier",
+            "src": "318:19:17"
+          }
+        ],
+        "contractDependencies": [
+          1852,
+          1875,
+          1923,
+          1946
+        ],
+        "contractKind": "contract",
+        "documentation": "@title OwnedUpgradeabilityProxy\n@dev This contract combines an upgradeability proxy with basic authorization control functionalities",
+        "fullyImplemented": true,
+        "id": 1826,
+        "linearizedBaseContracts": [
+          1826,
+          1923,
+          1946,
+          1852,
+          1875
+        ],
+        "name": "OwnedUpgradeabilityProxy",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "anonymous": false,
+            "documentation": "@dev Event to show ownership has been transferred\n@param previousOwner representing the address of the previous owner\n@param newOwner representing the address of the new owner",
+            "id": 1724,
+            "name": "ProxyOwnershipTransferred",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 1723,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1720,
+                  "indexed": false,
+                  "name": "previousOwner",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1724,
+                  "src": "575:21:17",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 1719,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "575:7:17",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1722,
+                  "indexed": false,
+                  "name": "newOwner",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1724,
+                  "src": "598:16:17",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 1721,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "598:7:17",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "574:41:17"
+            },
+            "src": "543:73:17"
+          },
+          {
+            "body": {
+              "id": 1732,
+              "nodeType": "Block",
+              "src": "748:51:17",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 1728,
+                          "name": "msg",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 10699,
+                          "src": "781:3:17",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_magic_message",
+                            "typeString": "msg"
+                          }
+                        },
+                        "id": 1729,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "sender",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": null,
+                        "src": "781:10:17",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "id": 1727,
+                      "name": "setUpgradeabilityOwner",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 1874,
+                      "src": "758:22:17",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_address_$returns$__$",
+                        "typeString": "function (address)"
+                      }
+                    },
+                    "id": 1730,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "758:34:17",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 1731,
+                  "nodeType": "ExpressionStatement",
+                  "src": "758:34:17"
+                }
+              ]
+            },
+            "documentation": "@dev the constructor sets the original owner of the contract to the sender account.",
+            "id": 1733,
+            "implemented": true,
+            "isConstructor": true,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1725,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "738:2:17"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 1726,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "748:0:17"
+            },
+            "scope": 1826,
+            "src": "727:72:17",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 1744,
+              "nodeType": "Block",
+              "src": "911:63:17",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "commonType": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        "id": 1740,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftExpression": {
+                          "argumentTypes": null,
+                          "expression": {
+                            "argumentTypes": null,
+                            "id": 1736,
+                            "name": "msg",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 10699,
+                            "src": "929:3:17",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_magic_message",
+                              "typeString": "msg"
+                            }
+                          },
+                          "id": 1737,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberName": "sender",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": null,
+                          "src": "929:10:17",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        "nodeType": "BinaryOperation",
+                        "operator": "==",
+                        "rightExpression": {
+                          "argumentTypes": null,
+                          "arguments": [],
+                          "expression": {
+                            "argumentTypes": [],
+                            "id": 1738,
+                            "name": "proxyOwner",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 1754,
+                            "src": "943:10:17",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_function_internal_view$__$returns$_t_address_$",
+                              "typeString": "function () view returns (address)"
+                            }
+                          },
+                          "id": 1739,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "kind": "functionCall",
+                          "lValueRequested": false,
+                          "names": [],
+                          "nodeType": "FunctionCall",
+                          "src": "943:12:17",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        "src": "929:26:17",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      ],
+                      "id": 1735,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        10702,
+                        10703
+                      ],
+                      "referencedDeclaration": 10702,
+                      "src": "921:7:17",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
+                        "typeString": "function (bool) pure"
+                      }
+                    },
+                    "id": 1741,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "921:35:17",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 1742,
+                  "nodeType": "ExpressionStatement",
+                  "src": "921:35:17"
+                },
+                {
+                  "id": 1743,
+                  "nodeType": "PlaceholderStatement",
+                  "src": "966:1:17"
+                }
+              ]
+            },
+            "documentation": "@dev Throws if called by any account other than the owner.",
+            "id": 1745,
+            "name": "onlyProxyOwner",
+            "nodeType": "ModifierDefinition",
+            "parameters": {
+              "id": 1734,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "908:2:17"
+            },
+            "src": "885:89:17",
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 1753,
+              "nodeType": "Block",
+              "src": "1140:45:17",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [],
+                    "expression": {
+                      "argumentTypes": [],
+                      "id": 1750,
+                      "name": "upgradeabilityOwner",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 1864,
+                      "src": "1157:19:17",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_view$__$returns$_t_address_$",
+                        "typeString": "function () view returns (address)"
+                      }
+                    },
+                    "id": 1751,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1157:21:17",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "functionReturnParameters": 1749,
+                  "id": 1752,
+                  "nodeType": "Return",
+                  "src": "1150:28:17"
+                }
+              ]
+            },
+            "documentation": "@dev Tells the address of the proxy owner\n@return the address of the proxy owner",
+            "id": 1754,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "proxyOwner",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1746,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1107:2:17"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 1749,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1748,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1754,
+                  "src": "1131:7:17",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 1747,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1131:7:17",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1130:9:17"
+            },
+            "scope": 1826,
+            "src": "1088:97:17",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 1779,
+              "nodeType": "Block",
+              "src": "1425:154:17",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "commonType": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        "id": 1766,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftExpression": {
+                          "argumentTypes": null,
+                          "id": 1762,
+                          "name": "newOwner",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 1756,
+                          "src": "1443:8:17",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        "nodeType": "BinaryOperation",
+                        "operator": "!=",
+                        "rightExpression": {
+                          "argumentTypes": null,
+                          "arguments": [
+                            {
+                              "argumentTypes": null,
+                              "hexValue": "30",
+                              "id": 1764,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "kind": "number",
+                              "lValueRequested": false,
+                              "nodeType": "Literal",
+                              "src": "1463:1:17",
+                              "subdenomination": null,
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_rational_0_by_1",
+                                "typeString": "int_const 0"
+                              },
+                              "value": "0"
+                            }
+                          ],
+                          "expression": {
+                            "argumentTypes": [
+                              {
+                                "typeIdentifier": "t_rational_0_by_1",
+                                "typeString": "int_const 0"
+                              }
+                            ],
+                            "id": 1763,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "lValueRequested": false,
+                            "nodeType": "ElementaryTypeNameExpression",
+                            "src": "1455:7:17",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_type$_t_address_$",
+                              "typeString": "type(address)"
+                            },
+                            "typeName": "address"
+                          },
+                          "id": 1765,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "kind": "typeConversion",
+                          "lValueRequested": false,
+                          "names": [],
+                          "nodeType": "FunctionCall",
+                          "src": "1455:10:17",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        "src": "1443:22:17",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      ],
+                      "id": 1761,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        10702,
+                        10703
+                      ],
+                      "referencedDeclaration": 10702,
+                      "src": "1435:7:17",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
+                        "typeString": "function (bool) pure"
+                      }
+                    },
+                    "id": 1767,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1435:31:17",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 1768,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1435:31:17"
+                },
+                {
+                  "eventCall": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "arguments": [],
+                        "expression": {
+                          "argumentTypes": [],
+                          "id": 1770,
+                          "name": "proxyOwner",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 1754,
+                          "src": "1507:10:17",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_function_internal_view$__$returns$_t_address_$",
+                            "typeString": "function () view returns (address)"
+                          }
+                        },
+                        "id": 1771,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "functionCall",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "1507:12:17",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 1772,
+                        "name": "newOwner",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 1756,
+                        "src": "1521:8:17",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "id": 1769,
+                      "name": "ProxyOwnershipTransferred",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 1724,
+                      "src": "1481:25:17",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_address_$_t_address_$returns$__$",
+                        "typeString": "function (address,address)"
+                      }
+                    },
+                    "id": 1773,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1481:49:17",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 1774,
+                  "nodeType": "EmitStatement",
+                  "src": "1476:54:17"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 1776,
+                        "name": "newOwner",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 1756,
+                        "src": "1563:8:17",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "id": 1775,
+                      "name": "setUpgradeabilityOwner",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 1874,
+                      "src": "1540:22:17",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_address_$returns$__$",
+                        "typeString": "function (address)"
+                      }
+                    },
+                    "id": 1777,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1540:32:17",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 1778,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1540:32:17"
+                }
+              ]
+            },
+            "documentation": "@dev Allows the current owner to transfer control of the contract to a newOwner.\n@param newOwner The address to transfer ownership to.",
+            "id": 1780,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [
+              {
+                "arguments": null,
+                "id": 1759,
+                "modifierName": {
+                  "argumentTypes": null,
+                  "id": 1758,
+                  "name": "onlyProxyOwner",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 1745,
+                  "src": "1410:14:17",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_modifier$__$",
+                    "typeString": "modifier ()"
+                  }
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "1410:14:17"
+              }
+            ],
+            "name": "transferProxyOwnership",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1757,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1756,
+                  "name": "newOwner",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1780,
+                  "src": "1385:16:17",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 1755,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1385:7:17",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1384:18:17"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 1760,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1425:0:17"
+            },
+            "scope": 1826,
+            "src": "1353:226:17",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 1794,
+              "nodeType": "Block",
+              "src": "1948:52:17",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 1790,
+                        "name": "version",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 1782,
+                        "src": "1969:7:17",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 1791,
+                        "name": "implementation",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 1784,
+                        "src": "1978:14:17",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "id": 1789,
+                      "name": "_upgradeTo",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 1922,
+                      "src": "1958:10:17",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_uint256_$_t_address_$returns$__$",
+                        "typeString": "function (uint256,address)"
+                      }
+                    },
+                    "id": 1792,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1958:35:17",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 1793,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1958:35:17"
+                }
+              ]
+            },
+            "documentation": "@dev Allows the upgradeability owner to upgrade the current version of the proxy.\n@param version representing the version name of the new implementation to be set.\n@param implementation representing the address of the new implementation to be set.",
+            "id": 1795,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [
+              {
+                "arguments": null,
+                "id": 1787,
+                "modifierName": {
+                  "argumentTypes": null,
+                  "id": 1786,
+                  "name": "onlyProxyOwner",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 1745,
+                  "src": "1933:14:17",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_modifier$__$",
+                    "typeString": "modifier ()"
+                  }
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "1933:14:17"
+              }
+            ],
+            "name": "upgradeTo",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1785,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1782,
+                  "name": "version",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1795,
+                  "src": "1885:15:17",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 1781,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1885:7:17",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1784,
+                  "name": "implementation",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1795,
+                  "src": "1902:22:17",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 1783,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1902:7:17",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1884:41:17"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 1788,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1948:0:17"
+            },
+            "scope": 1826,
+            "src": "1866:134:17",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 1824,
+              "nodeType": "Block",
+              "src": "2684:111:17",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 1807,
+                        "name": "version",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 1797,
+                        "src": "2704:7:17",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 1808,
+                        "name": "implementation",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 1799,
+                        "src": "2713:14:17",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "id": 1806,
+                      "name": "upgradeTo",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 1795,
+                      "src": "2694:9:17",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_uint256_$_t_address_$returns$__$",
+                        "typeString": "function (uint256,address)"
+                      }
+                    },
+                    "id": 1809,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "2694:34:17",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 1810,
+                  "nodeType": "ExpressionStatement",
+                  "src": "2694:34:17"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "arguments": [
+                          {
+                            "argumentTypes": null,
+                            "id": 1820,
+                            "name": "data",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 1801,
+                            "src": "2782:4:17",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_bytes_memory_ptr",
+                              "typeString": "bytes memory"
+                            }
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_bytes_memory_ptr",
+                              "typeString": "bytes memory"
+                            }
+                          ],
+                          "arguments": [
+                            {
+                              "argumentTypes": null,
+                              "expression": {
+                                "argumentTypes": null,
+                                "id": 1817,
+                                "name": "msg",
+                                "nodeType": "Identifier",
+                                "overloadedDeclarations": [],
+                                "referencedDeclaration": 10699,
+                                "src": "2771:3:17",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_magic_message",
+                                  "typeString": "msg"
+                                }
+                              },
+                              "id": 1818,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "memberName": "value",
+                              "nodeType": "MemberAccess",
+                              "referencedDeclaration": null,
+                              "src": "2771:9:17",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              }
+                            }
+                          ],
+                          "expression": {
+                            "argumentTypes": [
+                              {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              }
+                            ],
+                            "expression": {
+                              "argumentTypes": null,
+                              "expression": {
+                                "argumentTypes": null,
+                                "arguments": [
+                                  {
+                                    "argumentTypes": null,
+                                    "id": 1813,
+                                    "name": "this",
+                                    "nodeType": "Identifier",
+                                    "overloadedDeclarations": [],
+                                    "referencedDeclaration": 10768,
+                                    "src": "2754:4:17",
+                                    "typeDescriptions": {
+                                      "typeIdentifier": "t_contract$_OwnedUpgradeabilityProxy_$1826",
+                                      "typeString": "contract OwnedUpgradeabilityProxy"
+                                    }
+                                  }
+                                ],
+                                "expression": {
+                                  "argumentTypes": [
+                                    {
+                                      "typeIdentifier": "t_contract$_OwnedUpgradeabilityProxy_$1826",
+                                      "typeString": "contract OwnedUpgradeabilityProxy"
+                                    }
+                                  ],
+                                  "id": 1812,
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": true,
+                                  "lValueRequested": false,
+                                  "nodeType": "ElementaryTypeNameExpression",
+                                  "src": "2746:7:17",
+                                  "typeDescriptions": {
+                                    "typeIdentifier": "t_type$_t_address_$",
+                                    "typeString": "type(address)"
+                                  },
+                                  "typeName": "address"
+                                },
+                                "id": 1814,
+                                "isConstant": false,
+                                "isLValue": false,
+                                "isPure": false,
+                                "kind": "typeConversion",
+                                "lValueRequested": false,
+                                "names": [],
+                                "nodeType": "FunctionCall",
+                                "src": "2746:13:17",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_address",
+                                  "typeString": "address"
+                                }
+                              },
+                              "id": 1815,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "memberName": "call",
+                              "nodeType": "MemberAccess",
+                              "referencedDeclaration": null,
+                              "src": "2746:18:17",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_function_barecall_payable$__$returns$_t_bool_$",
+                                "typeString": "function () payable returns (bool)"
+                              }
+                            },
+                            "id": 1816,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "memberName": "value",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": null,
+                            "src": "2746:24:17",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_function_setvalue_nonpayable$_t_uint256_$returns$_t_function_barecall_payable$__$returns$_t_bool_$value_$",
+                              "typeString": "function (uint256) returns (function () payable returns (bool))"
+                            }
+                          },
+                          "id": 1819,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "kind": "functionCall",
+                          "lValueRequested": false,
+                          "names": [],
+                          "nodeType": "FunctionCall",
+                          "src": "2746:35:17",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_function_barecall_payable$__$returns$_t_bool_$value",
+                            "typeString": "function () payable returns (bool)"
+                          }
+                        },
+                        "id": 1821,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "functionCall",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "2746:41:17",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      ],
+                      "id": 1811,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        10702,
+                        10703
+                      ],
+                      "referencedDeclaration": 10702,
+                      "src": "2738:7:17",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
+                        "typeString": "function (bool) pure"
+                      }
+                    },
+                    "id": 1822,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "2738:50:17",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 1823,
+                  "nodeType": "ExpressionStatement",
+                  "src": "2738:50:17"
+                }
+              ]
+            },
+            "documentation": "@dev Allows the upgradeability owner to upgrade the current version of the proxy and call the new implementation\nto initialize whatever is needed through a low level call.\n@param version representing the version name of the new implementation to be set.\n@param implementation representing the address of the new implementation to be set.\n@param data represents the msg.data to bet sent in the low level call. This parameter may include the function\nsignature of the implementation to be called with the needed payload",
+            "id": 1825,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [
+              {
+                "arguments": null,
+                "id": 1804,
+                "modifierName": {
+                  "argumentTypes": null,
+                  "id": 1803,
+                  "name": "onlyProxyOwner",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 1745,
+                  "src": "2669:14:17",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_modifier$__$",
+                    "typeString": "modifier ()"
+                  }
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "2669:14:17"
+              }
+            ],
+            "name": "upgradeToAndCall",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1802,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1797,
+                  "name": "version",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1825,
+                  "src": "2601:15:17",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 1796,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2601:7:17",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1799,
+                  "name": "implementation",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1825,
+                  "src": "2618:22:17",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 1798,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2618:7:17",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1801,
+                  "name": "data",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1825,
+                  "src": "2642:10:17",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_memory_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 1800,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2642:5:17",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2600:53:17"
+            },
+            "payable": true,
+            "returnParameters": {
+              "id": 1805,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "2684:0:17"
+            },
+            "scope": 1826,
+            "src": "2575:220:17",
+            "stateMutability": "payable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 1827,
+        "src": "253:2544:17"
+      }
+    ],
+    "src": "0:2798:17"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/fbranci/iexecdev/vivani/tokenbridge/contracts/contracts/upgradeability/OwnedUpgradeabilityProxy.sol",
+    "exportedSymbols": {
+      "OwnedUpgradeabilityProxy": [
+        1826
+      ]
+    },
+    "id": 1827,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1712,
+        "literals": [
+          "solidity",
+          "0.4",
+          ".24"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:17"
+      },
+      {
+        "absolutePath": "/Users/fbranci/iexecdev/vivani/tokenbridge/contracts/contracts/upgradeability/UpgradeabilityProxy.sol",
+        "file": "./UpgradeabilityProxy.sol",
+        "id": 1713,
+        "nodeType": "ImportDirective",
+        "scope": 1827,
+        "sourceUnit": 1924,
+        "src": "25:35:17",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/Users/fbranci/iexecdev/vivani/tokenbridge/contracts/contracts/upgradeability/UpgradeabilityOwnerStorage.sol",
+        "file": "./UpgradeabilityOwnerStorage.sol",
+        "id": 1714,
+        "nodeType": "ImportDirective",
+        "scope": 1827,
+        "sourceUnit": 1876,
+        "src": "61:42:17",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 1715,
+              "name": "UpgradeabilityOwnerStorage",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 1875,
+              "src": "290:26:17",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_UpgradeabilityOwnerStorage_$1875",
+                "typeString": "contract UpgradeabilityOwnerStorage"
+              }
+            },
+            "id": 1716,
+            "nodeType": "InheritanceSpecifier",
+            "src": "290:26:17"
+          },
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 1717,
+              "name": "UpgradeabilityProxy",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 1923,
+              "src": "318:19:17",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_UpgradeabilityProxy_$1923",
+                "typeString": "contract UpgradeabilityProxy"
+              }
+            },
+            "id": 1718,
+            "nodeType": "InheritanceSpecifier",
+            "src": "318:19:17"
+          }
+        ],
+        "contractDependencies": [
+          1852,
+          1875,
+          1923,
+          1946
+        ],
+        "contractKind": "contract",
+        "documentation": "@title OwnedUpgradeabilityProxy\n@dev This contract combines an upgradeability proxy with basic authorization control functionalities",
+        "fullyImplemented": true,
+        "id": 1826,
+        "linearizedBaseContracts": [
+          1826,
+          1923,
+          1946,
+          1852,
+          1875
+        ],
+        "name": "OwnedUpgradeabilityProxy",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "anonymous": false,
+            "documentation": "@dev Event to show ownership has been transferred\n@param previousOwner representing the address of the previous owner\n@param newOwner representing the address of the new owner",
+            "id": 1724,
+            "name": "ProxyOwnershipTransferred",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 1723,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1720,
+                  "indexed": false,
+                  "name": "previousOwner",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1724,
+                  "src": "575:21:17",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 1719,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "575:7:17",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1722,
+                  "indexed": false,
+                  "name": "newOwner",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1724,
+                  "src": "598:16:17",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 1721,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "598:7:17",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "574:41:17"
+            },
+            "src": "543:73:17"
+          },
+          {
+            "body": {
+              "id": 1732,
+              "nodeType": "Block",
+              "src": "748:51:17",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 1728,
+                          "name": "msg",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 10699,
+                          "src": "781:3:17",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_magic_message",
+                            "typeString": "msg"
+                          }
+                        },
+                        "id": 1729,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "sender",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": null,
+                        "src": "781:10:17",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "id": 1727,
+                      "name": "setUpgradeabilityOwner",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 1874,
+                      "src": "758:22:17",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_address_$returns$__$",
+                        "typeString": "function (address)"
+                      }
+                    },
+                    "id": 1730,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "758:34:17",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 1731,
+                  "nodeType": "ExpressionStatement",
+                  "src": "758:34:17"
+                }
+              ]
+            },
+            "documentation": "@dev the constructor sets the original owner of the contract to the sender account.",
+            "id": 1733,
+            "implemented": true,
+            "isConstructor": true,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1725,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "738:2:17"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 1726,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "748:0:17"
+            },
+            "scope": 1826,
+            "src": "727:72:17",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 1744,
+              "nodeType": "Block",
+              "src": "911:63:17",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "commonType": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        "id": 1740,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftExpression": {
+                          "argumentTypes": null,
+                          "expression": {
+                            "argumentTypes": null,
+                            "id": 1736,
+                            "name": "msg",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 10699,
+                            "src": "929:3:17",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_magic_message",
+                              "typeString": "msg"
+                            }
+                          },
+                          "id": 1737,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberName": "sender",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": null,
+                          "src": "929:10:17",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        "nodeType": "BinaryOperation",
+                        "operator": "==",
+                        "rightExpression": {
+                          "argumentTypes": null,
+                          "arguments": [],
+                          "expression": {
+                            "argumentTypes": [],
+                            "id": 1738,
+                            "name": "proxyOwner",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 1754,
+                            "src": "943:10:17",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_function_internal_view$__$returns$_t_address_$",
+                              "typeString": "function () view returns (address)"
+                            }
+                          },
+                          "id": 1739,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "kind": "functionCall",
+                          "lValueRequested": false,
+                          "names": [],
+                          "nodeType": "FunctionCall",
+                          "src": "943:12:17",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        "src": "929:26:17",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      ],
+                      "id": 1735,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        10702,
+                        10703
+                      ],
+                      "referencedDeclaration": 10702,
+                      "src": "921:7:17",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
+                        "typeString": "function (bool) pure"
+                      }
+                    },
+                    "id": 1741,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "921:35:17",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 1742,
+                  "nodeType": "ExpressionStatement",
+                  "src": "921:35:17"
+                },
+                {
+                  "id": 1743,
+                  "nodeType": "PlaceholderStatement",
+                  "src": "966:1:17"
+                }
+              ]
+            },
+            "documentation": "@dev Throws if called by any account other than the owner.",
+            "id": 1745,
+            "name": "onlyProxyOwner",
+            "nodeType": "ModifierDefinition",
+            "parameters": {
+              "id": 1734,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "908:2:17"
+            },
+            "src": "885:89:17",
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 1753,
+              "nodeType": "Block",
+              "src": "1140:45:17",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [],
+                    "expression": {
+                      "argumentTypes": [],
+                      "id": 1750,
+                      "name": "upgradeabilityOwner",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 1864,
+                      "src": "1157:19:17",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_view$__$returns$_t_address_$",
+                        "typeString": "function () view returns (address)"
+                      }
+                    },
+                    "id": 1751,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1157:21:17",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "functionReturnParameters": 1749,
+                  "id": 1752,
+                  "nodeType": "Return",
+                  "src": "1150:28:17"
+                }
+              ]
+            },
+            "documentation": "@dev Tells the address of the proxy owner\n@return the address of the proxy owner",
+            "id": 1754,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "proxyOwner",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1746,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1107:2:17"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 1749,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1748,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1754,
+                  "src": "1131:7:17",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 1747,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1131:7:17",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1130:9:17"
+            },
+            "scope": 1826,
+            "src": "1088:97:17",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 1779,
+              "nodeType": "Block",
+              "src": "1425:154:17",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "commonType": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        "id": 1766,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftExpression": {
+                          "argumentTypes": null,
+                          "id": 1762,
+                          "name": "newOwner",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 1756,
+                          "src": "1443:8:17",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        "nodeType": "BinaryOperation",
+                        "operator": "!=",
+                        "rightExpression": {
+                          "argumentTypes": null,
+                          "arguments": [
+                            {
+                              "argumentTypes": null,
+                              "hexValue": "30",
+                              "id": 1764,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "kind": "number",
+                              "lValueRequested": false,
+                              "nodeType": "Literal",
+                              "src": "1463:1:17",
+                              "subdenomination": null,
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_rational_0_by_1",
+                                "typeString": "int_const 0"
+                              },
+                              "value": "0"
+                            }
+                          ],
+                          "expression": {
+                            "argumentTypes": [
+                              {
+                                "typeIdentifier": "t_rational_0_by_1",
+                                "typeString": "int_const 0"
+                              }
+                            ],
+                            "id": 1763,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "lValueRequested": false,
+                            "nodeType": "ElementaryTypeNameExpression",
+                            "src": "1455:7:17",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_type$_t_address_$",
+                              "typeString": "type(address)"
+                            },
+                            "typeName": "address"
+                          },
+                          "id": 1765,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "kind": "typeConversion",
+                          "lValueRequested": false,
+                          "names": [],
+                          "nodeType": "FunctionCall",
+                          "src": "1455:10:17",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        "src": "1443:22:17",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      ],
+                      "id": 1761,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        10702,
+                        10703
+                      ],
+                      "referencedDeclaration": 10702,
+                      "src": "1435:7:17",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
+                        "typeString": "function (bool) pure"
+                      }
+                    },
+                    "id": 1767,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1435:31:17",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 1768,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1435:31:17"
+                },
+                {
+                  "eventCall": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "arguments": [],
+                        "expression": {
+                          "argumentTypes": [],
+                          "id": 1770,
+                          "name": "proxyOwner",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 1754,
+                          "src": "1507:10:17",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_function_internal_view$__$returns$_t_address_$",
+                            "typeString": "function () view returns (address)"
+                          }
+                        },
+                        "id": 1771,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "functionCall",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "1507:12:17",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 1772,
+                        "name": "newOwner",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 1756,
+                        "src": "1521:8:17",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "id": 1769,
+                      "name": "ProxyOwnershipTransferred",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 1724,
+                      "src": "1481:25:17",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_address_$_t_address_$returns$__$",
+                        "typeString": "function (address,address)"
+                      }
+                    },
+                    "id": 1773,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1481:49:17",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 1774,
+                  "nodeType": "EmitStatement",
+                  "src": "1476:54:17"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 1776,
+                        "name": "newOwner",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 1756,
+                        "src": "1563:8:17",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "id": 1775,
+                      "name": "setUpgradeabilityOwner",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 1874,
+                      "src": "1540:22:17",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_address_$returns$__$",
+                        "typeString": "function (address)"
+                      }
+                    },
+                    "id": 1777,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1540:32:17",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 1778,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1540:32:17"
+                }
+              ]
+            },
+            "documentation": "@dev Allows the current owner to transfer control of the contract to a newOwner.\n@param newOwner The address to transfer ownership to.",
+            "id": 1780,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [
+              {
+                "arguments": null,
+                "id": 1759,
+                "modifierName": {
+                  "argumentTypes": null,
+                  "id": 1758,
+                  "name": "onlyProxyOwner",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 1745,
+                  "src": "1410:14:17",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_modifier$__$",
+                    "typeString": "modifier ()"
+                  }
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "1410:14:17"
+              }
+            ],
+            "name": "transferProxyOwnership",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1757,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1756,
+                  "name": "newOwner",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1780,
+                  "src": "1385:16:17",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 1755,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1385:7:17",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1384:18:17"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 1760,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1425:0:17"
+            },
+            "scope": 1826,
+            "src": "1353:226:17",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 1794,
+              "nodeType": "Block",
+              "src": "1948:52:17",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 1790,
+                        "name": "version",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 1782,
+                        "src": "1969:7:17",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 1791,
+                        "name": "implementation",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 1784,
+                        "src": "1978:14:17",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "id": 1789,
+                      "name": "_upgradeTo",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 1922,
+                      "src": "1958:10:17",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_uint256_$_t_address_$returns$__$",
+                        "typeString": "function (uint256,address)"
+                      }
+                    },
+                    "id": 1792,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1958:35:17",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 1793,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1958:35:17"
+                }
+              ]
+            },
+            "documentation": "@dev Allows the upgradeability owner to upgrade the current version of the proxy.\n@param version representing the version name of the new implementation to be set.\n@param implementation representing the address of the new implementation to be set.",
+            "id": 1795,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [
+              {
+                "arguments": null,
+                "id": 1787,
+                "modifierName": {
+                  "argumentTypes": null,
+                  "id": 1786,
+                  "name": "onlyProxyOwner",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 1745,
+                  "src": "1933:14:17",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_modifier$__$",
+                    "typeString": "modifier ()"
+                  }
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "1933:14:17"
+              }
+            ],
+            "name": "upgradeTo",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1785,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1782,
+                  "name": "version",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1795,
+                  "src": "1885:15:17",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 1781,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1885:7:17",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1784,
+                  "name": "implementation",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1795,
+                  "src": "1902:22:17",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 1783,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1902:7:17",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1884:41:17"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 1788,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1948:0:17"
+            },
+            "scope": 1826,
+            "src": "1866:134:17",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 1824,
+              "nodeType": "Block",
+              "src": "2684:111:17",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 1807,
+                        "name": "version",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 1797,
+                        "src": "2704:7:17",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 1808,
+                        "name": "implementation",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 1799,
+                        "src": "2713:14:17",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "id": 1806,
+                      "name": "upgradeTo",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 1795,
+                      "src": "2694:9:17",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_uint256_$_t_address_$returns$__$",
+                        "typeString": "function (uint256,address)"
+                      }
+                    },
+                    "id": 1809,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "2694:34:17",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 1810,
+                  "nodeType": "ExpressionStatement",
+                  "src": "2694:34:17"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "arguments": [
+                          {
+                            "argumentTypes": null,
+                            "id": 1820,
+                            "name": "data",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 1801,
+                            "src": "2782:4:17",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_bytes_memory_ptr",
+                              "typeString": "bytes memory"
+                            }
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_bytes_memory_ptr",
+                              "typeString": "bytes memory"
+                            }
+                          ],
+                          "arguments": [
+                            {
+                              "argumentTypes": null,
+                              "expression": {
+                                "argumentTypes": null,
+                                "id": 1817,
+                                "name": "msg",
+                                "nodeType": "Identifier",
+                                "overloadedDeclarations": [],
+                                "referencedDeclaration": 10699,
+                                "src": "2771:3:17",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_magic_message",
+                                  "typeString": "msg"
+                                }
+                              },
+                              "id": 1818,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "memberName": "value",
+                              "nodeType": "MemberAccess",
+                              "referencedDeclaration": null,
+                              "src": "2771:9:17",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              }
+                            }
+                          ],
+                          "expression": {
+                            "argumentTypes": [
+                              {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              }
+                            ],
+                            "expression": {
+                              "argumentTypes": null,
+                              "expression": {
+                                "argumentTypes": null,
+                                "arguments": [
+                                  {
+                                    "argumentTypes": null,
+                                    "id": 1813,
+                                    "name": "this",
+                                    "nodeType": "Identifier",
+                                    "overloadedDeclarations": [],
+                                    "referencedDeclaration": 10768,
+                                    "src": "2754:4:17",
+                                    "typeDescriptions": {
+                                      "typeIdentifier": "t_contract$_OwnedUpgradeabilityProxy_$1826",
+                                      "typeString": "contract OwnedUpgradeabilityProxy"
+                                    }
+                                  }
+                                ],
+                                "expression": {
+                                  "argumentTypes": [
+                                    {
+                                      "typeIdentifier": "t_contract$_OwnedUpgradeabilityProxy_$1826",
+                                      "typeString": "contract OwnedUpgradeabilityProxy"
+                                    }
+                                  ],
+                                  "id": 1812,
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": true,
+                                  "lValueRequested": false,
+                                  "nodeType": "ElementaryTypeNameExpression",
+                                  "src": "2746:7:17",
+                                  "typeDescriptions": {
+                                    "typeIdentifier": "t_type$_t_address_$",
+                                    "typeString": "type(address)"
+                                  },
+                                  "typeName": "address"
+                                },
+                                "id": 1814,
+                                "isConstant": false,
+                                "isLValue": false,
+                                "isPure": false,
+                                "kind": "typeConversion",
+                                "lValueRequested": false,
+                                "names": [],
+                                "nodeType": "FunctionCall",
+                                "src": "2746:13:17",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_address",
+                                  "typeString": "address"
+                                }
+                              },
+                              "id": 1815,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "memberName": "call",
+                              "nodeType": "MemberAccess",
+                              "referencedDeclaration": null,
+                              "src": "2746:18:17",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_function_barecall_payable$__$returns$_t_bool_$",
+                                "typeString": "function () payable returns (bool)"
+                              }
+                            },
+                            "id": 1816,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "memberName": "value",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": null,
+                            "src": "2746:24:17",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_function_setvalue_nonpayable$_t_uint256_$returns$_t_function_barecall_payable$__$returns$_t_bool_$value_$",
+                              "typeString": "function (uint256) returns (function () payable returns (bool))"
+                            }
+                          },
+                          "id": 1819,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "kind": "functionCall",
+                          "lValueRequested": false,
+                          "names": [],
+                          "nodeType": "FunctionCall",
+                          "src": "2746:35:17",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_function_barecall_payable$__$returns$_t_bool_$value",
+                            "typeString": "function () payable returns (bool)"
+                          }
+                        },
+                        "id": 1821,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "functionCall",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "2746:41:17",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      ],
+                      "id": 1811,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        10702,
+                        10703
+                      ],
+                      "referencedDeclaration": 10702,
+                      "src": "2738:7:17",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
+                        "typeString": "function (bool) pure"
+                      }
+                    },
+                    "id": 1822,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "2738:50:17",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 1823,
+                  "nodeType": "ExpressionStatement",
+                  "src": "2738:50:17"
+                }
+              ]
+            },
+            "documentation": "@dev Allows the upgradeability owner to upgrade the current version of the proxy and call the new implementation\nto initialize whatever is needed through a low level call.\n@param version representing the version name of the new implementation to be set.\n@param implementation representing the address of the new implementation to be set.\n@param data represents the msg.data to bet sent in the low level call. This parameter may include the function\nsignature of the implementation to be called with the needed payload",
+            "id": 1825,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [
+              {
+                "arguments": null,
+                "id": 1804,
+                "modifierName": {
+                  "argumentTypes": null,
+                  "id": 1803,
+                  "name": "onlyProxyOwner",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 1745,
+                  "src": "2669:14:17",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_modifier$__$",
+                    "typeString": "modifier ()"
+                  }
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "2669:14:17"
+              }
+            ],
+            "name": "upgradeToAndCall",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1802,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1797,
+                  "name": "version",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1825,
+                  "src": "2601:15:17",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 1796,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2601:7:17",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1799,
+                  "name": "implementation",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1825,
+                  "src": "2618:22:17",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 1798,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2618:7:17",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1801,
+                  "name": "data",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1825,
+                  "src": "2642:10:17",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_memory_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 1800,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2642:5:17",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2600:53:17"
+            },
+            "payable": true,
+            "returnParameters": {
+              "id": 1805,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "2684:0:17"
+            },
+            "scope": 1826,
+            "src": "2575:220:17",
+            "stateMutability": "payable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 1827,
+        "src": "253:2544:17"
+      }
+    ],
+    "src": "0:2798:17"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.4.24+commit.e67f0147.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.0.13",
+  "updatedAt": "2019-08-28T14:04:53.173Z",
+  "devdoc": {
+    "methods": {
+      "implementation()": {
+        "details": "Tells the address of the current implementation",
+        "return": "address of the current implementation"
+      },
+      "proxyOwner()": {
+        "details": "Tells the address of the proxy owner",
+        "return": "the address of the proxy owner"
+      },
+      "transferProxyOwnership(address)": {
+        "details": "Allows the current owner to transfer control of the contract to a newOwner.",
+        "params": {
+          "newOwner": "The address to transfer ownership to."
+        }
+      },
+      "upgradeTo(uint256,address)": {
+        "details": "Allows the upgradeability owner to upgrade the current version of the proxy.",
+        "params": {
+          "implementation": "representing the address of the new implementation to be set.",
+          "version": "representing the version name of the new implementation to be set."
+        }
+      },
+      "upgradeToAndCall(uint256,address,bytes)": {
+        "details": "Allows the upgradeability owner to upgrade the current version of the proxy and call the new implementation to initialize whatever is needed through a low level call.",
+        "params": {
+          "data": "represents the msg.data to bet sent in the low level call. This parameter may include the function signature of the implementation to be called with the needed payload",
+          "implementation": "representing the address of the new implementation to be set.",
+          "version": "representing the version name of the new implementation to be set."
+        }
+      },
+      "upgradeabilityOwner()": {
+        "details": "Tells the address of the owner",
+        "return": "the address of the owner"
+      },
+      "version()": {
+        "details": "Tells the version name of the current implementation",
+        "return": "string representing the name of the current version"
+      }
+    },
+    "title": "OwnedUpgradeabilityProxy"
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}

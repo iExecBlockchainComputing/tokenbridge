@@ -1,0 +1,179 @@
+{
+  "contractName": "Staking",
+  "abi": [
+    {
+      "inputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.4.24+commit.e67f0147\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/Users/fbranci/iexecdev/vivani/tokenbridge/contracts/contracts/test/Staking.sol\":\"Staking\"},\"evmVersion\":\"byzantium\",\"libraries\":{},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/fbranci/iexecdev/vivani/tokenbridge/contracts/contracts/test/Staking.sol\":{\"keccak256\":\"0xf0d4606833d69aef9c37f86ab62a53954ef9059d5b082627482eee651c500ee6\",\"urls\":[\"bzzr://5a671abb04c1096b1296e101913e80e5a3ba7f5eb71547807c37462da99ed384\"]}},\"version\":1}",
+  "bytecode": "0x6080604052348015600f57600080fd5b50603580601d6000396000f3006080604052600080fd00a165627a7a72305820db161bfd6ed1e8730e1b3379cf4206ed52bca81d36591b544c90fa0b53388f430029",
+  "deployedBytecode": "0x6080604052600080fd00a165627a7a72305820db161bfd6ed1e8730e1b3379cf4206ed52bca81d36591b544c90fa0b53388f430029",
+  "sourceMap": "26:48:13:-;;;49:23;8:9:-1;5:2;;;30:1;27;20:12;5:2;49:23:13;26:48;;;;;;",
+  "deployedSourceMap": "26:48:13:-;;;;;",
+  "source": "pragma solidity 0.4.24;\n\n\ncontract Staking {\n    constructor() public {}\n}\n",
+  "sourcePath": "/Users/fbranci/iexecdev/vivani/tokenbridge/contracts/contracts/test/Staking.sol",
+  "ast": {
+    "absolutePath": "/Users/fbranci/iexecdev/vivani/tokenbridge/contracts/contracts/test/Staking.sol",
+    "exportedSymbols": {
+      "Staking": [
+        1609
+      ]
+    },
+    "id": 1610,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1604,
+        "literals": [
+          "solidity",
+          "0.4",
+          ".24"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:13"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 1609,
+        "linearizedBaseContracts": [
+          1609
+        ],
+        "name": "Staking",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 1607,
+              "nodeType": "Block",
+              "src": "70:2:13",
+              "statements": []
+            },
+            "documentation": null,
+            "id": 1608,
+            "implemented": true,
+            "isConstructor": true,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1605,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "60:2:13"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 1606,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "70:0:13"
+            },
+            "scope": 1609,
+            "src": "49:23:13",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 1610,
+        "src": "26:48:13"
+      }
+    ],
+    "src": "0:75:13"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/fbranci/iexecdev/vivani/tokenbridge/contracts/contracts/test/Staking.sol",
+    "exportedSymbols": {
+      "Staking": [
+        1609
+      ]
+    },
+    "id": 1610,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1604,
+        "literals": [
+          "solidity",
+          "0.4",
+          ".24"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:13"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 1609,
+        "linearizedBaseContracts": [
+          1609
+        ],
+        "name": "Staking",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 1607,
+              "nodeType": "Block",
+              "src": "70:2:13",
+              "statements": []
+            },
+            "documentation": null,
+            "id": 1608,
+            "implemented": true,
+            "isConstructor": true,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1605,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "60:2:13"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 1606,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "70:0:13"
+            },
+            "scope": 1609,
+            "src": "49:23:13",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 1610,
+        "src": "26:48:13"
+      }
+    ],
+    "src": "0:75:13"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.4.24+commit.e67f0147.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.0.13",
+  "updatedAt": "2019-08-28T14:04:53.169Z",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}
