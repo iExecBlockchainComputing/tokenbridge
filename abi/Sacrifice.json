@@ -1,0 +1,348 @@
+{
+  "contractName": "Sacrifice",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "name": "_recipient",
+          "type": "address"
+        }
+      ],
+      "payable": true,
+      "stateMutability": "payable",
+      "type": "constructor"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.4.24+commit.e67f0147\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"name\":\"_recipient\",\"type\":\"address\"}],\"payable\":true,\"stateMutability\":\"payable\",\"type\":\"constructor\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/mono/contracts/contracts/upgradeable_contracts/Sacrifice.sol\":\"Sacrifice\"},\"evmVersion\":\"byzantium\",\"libraries\":{},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/mono/contracts/contracts/upgradeable_contracts/Sacrifice.sol\":{\"keccak256\":\"0x2c8f9b5e39d33552cd16d3fdd84e58f2138042166ae9b351e97fe674f7e3f337\",\"urls\":[\"bzzr://a438edd320ea1fa8141d54002897c3a50cf6cb13b07b4088d01ffb099bb9e859\"]}},\"version\":1}",
+  "bytecode": "0x608060405260405160208060218339810160405251600160a060020a038116ff00",
+  "deployedBytecode": "0x6080604052600080fd00a165627a7a723058203e1abd5067da5cfaeb8ce9de1de64d2646d50ebae6f97aa2988eb986e505f0be0029",
+  "sourceMap": "25:115:47:-;;;50:88;;;;;;;;;;;;-1:-1:-1;;;;;107:24:47;;",
+  "deployedSourceMap": "25:115:47:-;;;;;",
+  "source": "pragma solidity 0.4.24;\n\ncontract Sacrifice {\n    constructor(address _recipient) public payable {\n        selfdestruct(_recipient);\n    }\n}\n",
+  "sourcePath": "/mono/contracts/contracts/upgradeable_contracts/Sacrifice.sol",
+  "ast": {
+    "absolutePath": "/mono/contracts/contracts/upgradeable_contracts/Sacrifice.sol",
+    "exportedSymbols": {
+      "Sacrifice": [
+        5847
+      ]
+    },
+    "id": 5848,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 5836,
+        "literals": [
+          "solidity",
+          "0.4",
+          ".24"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:47"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 5847,
+        "linearizedBaseContracts": [
+          5847
+        ],
+        "name": "Sacrifice",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 5845,
+              "nodeType": "Block",
+              "src": "97:41:47",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 5842,
+                        "name": "_recipient",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 5838,
+                        "src": "120:10:47",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "id": 5841,
+                      "name": "selfdestruct",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 10905,
+                      "src": "107:12:47",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_selfdestruct_nonpayable$_t_address_$returns$__$",
+                        "typeString": "function (address)"
+                      }
+                    },
+                    "id": 5843,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "107:24:47",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 5844,
+                  "nodeType": "ExpressionStatement",
+                  "src": "107:24:47"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 5846,
+            "implemented": true,
+            "isConstructor": true,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 5839,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 5838,
+                  "name": "_recipient",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 5846,
+                  "src": "62:18:47",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 5837,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "62:7:47",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "61:20:47"
+            },
+            "payable": true,
+            "returnParameters": {
+              "id": 5840,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "97:0:47"
+            },
+            "scope": 5847,
+            "src": "50:88:47",
+            "stateMutability": "payable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 5848,
+        "src": "25:115:47"
+      }
+    ],
+    "src": "0:141:47"
+  },
+  "legacyAST": {
+    "absolutePath": "/mono/contracts/contracts/upgradeable_contracts/Sacrifice.sol",
+    "exportedSymbols": {
+      "Sacrifice": [
+        5847
+      ]
+    },
+    "id": 5848,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 5836,
+        "literals": [
+          "solidity",
+          "0.4",
+          ".24"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:47"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 5847,
+        "linearizedBaseContracts": [
+          5847
+        ],
+        "name": "Sacrifice",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 5845,
+              "nodeType": "Block",
+              "src": "97:41:47",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 5842,
+                        "name": "_recipient",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 5838,
+                        "src": "120:10:47",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "id": 5841,
+                      "name": "selfdestruct",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 10905,
+                      "src": "107:12:47",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_selfdestruct_nonpayable$_t_address_$returns$__$",
+                        "typeString": "function (address)"
+                      }
+                    },
+                    "id": 5843,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "107:24:47",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 5844,
+                  "nodeType": "ExpressionStatement",
+                  "src": "107:24:47"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 5846,
+            "implemented": true,
+            "isConstructor": true,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 5839,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 5838,
+                  "name": "_recipient",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 5846,
+                  "src": "62:18:47",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 5837,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "62:7:47",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "61:20:47"
+            },
+            "payable": true,
+            "returnParameters": {
+              "id": 5840,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "97:0:47"
+            },
+            "scope": 5847,
+            "src": "50:88:47",
+            "stateMutability": "payable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 5848,
+        "src": "25:115:47"
+      }
+    ],
+    "src": "0:141:47"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.4.24+commit.e67f0147.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.0.11",
+  "updatedAt": "2019-09-03T09:43:49.670Z",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}

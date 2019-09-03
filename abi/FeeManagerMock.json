@@ -1,0 +1,1335 @@
+{
+  "contractName": "FeeManagerMock",
+  "abi": [
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_fee",
+          "type": "uint256"
+        }
+      ],
+      "name": "setForeignFee",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_fee",
+          "type": "uint256"
+        }
+      ],
+      "name": "setHomeFee",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "getHomeFee",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "_value",
+          "type": "uint256"
+        },
+        {
+          "name": "_recover",
+          "type": "bool"
+        },
+        {
+          "name": "_feeType",
+          "type": "bytes32"
+        }
+      ],
+      "name": "calculateFee",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "getForeignFee",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "name": "fee",
+          "type": "uint256"
+        }
+      ],
+      "name": "HomeFeeUpdated",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "name": "fee",
+          "type": "uint256"
+        }
+      ],
+      "name": "ForeignFeeUpdated",
+      "type": "event"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_fee",
+          "type": "uint256"
+        }
+      ],
+      "name": "distributeFeeFromAffirmation",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_fee",
+          "type": "uint256"
+        }
+      ],
+      "name": "distributeFeeFromSignatures",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "getFeeManagerMode",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bytes4"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "pure",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "_count",
+          "type": "uint256"
+        }
+      ],
+      "name": "randomTest",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.4.24+commit.e67f0147\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":false,\"inputs\":[{\"name\":\"_fee\",\"type\":\"uint256\"}],\"name\":\"distributeFeeFromAffirmation\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"_fee\",\"type\":\"uint256\"}],\"name\":\"setForeignFee\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"_fee\",\"type\":\"uint256\"}],\"name\":\"setHomeFee\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"_fee\",\"type\":\"uint256\"}],\"name\":\"distributeFeeFromSignatures\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"_count\",\"type\":\"uint256\"}],\"name\":\"randomTest\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"getHomeFee\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"_value\",\"type\":\"uint256\"},{\"name\":\"_recover\",\"type\":\"bool\"},{\"name\":\"_feeType\",\"type\":\"bytes32\"}],\"name\":\"calculateFee\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"getFeeManagerMode\",\"outputs\":[{\"name\":\"\",\"type\":\"bytes4\"}],\"payable\":false,\"stateMutability\":\"pure\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"getForeignFee\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"name\":\"fee\",\"type\":\"uint256\"}],\"name\":\"HomeFeeUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"name\":\"fee\",\"type\":\"uint256\"}],\"name\":\"ForeignFeeUpdated\",\"type\":\"event\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/mono/contracts/contracts/mocks/FeeManagerMock.sol\":\"FeeManagerMock\"},\"evmVersion\":\"byzantium\",\"libraries\":{},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/mono/contracts/contracts/interfaces/IRewardableValidators.sol\":{\"keccak256\":\"0xc7255d4bf3078fdd726aad9777c7c4af6f62c12ba105241113f74fefdca6e88b\",\"urls\":[\"bzzr://7d4a27c8659ee4026820ae9a9373422432cea27a3d0e64a4e75bbd6f85f49f01\"]},\"/mono/contracts/contracts/mocks/FeeManagerMock.sol\":{\"keccak256\":\"0x779e5fa9487d4c36e77a3028da0cb60afab937430277e11899da08b8db4e5f58\",\"urls\":[\"bzzr://e2372f74fff335127756aae075a066eeb6ffa7b98fabb6dc8d22f772ba10f26f\"]},\"/mono/contracts/contracts/upgradeability/EternalStorage.sol\":{\"keccak256\":\"0x8f2df79a1cda812d4be25da8f2b138f9b7492e76da1dfba21d87012e649cc51c\",\"urls\":[\"bzzr://0846d08e1b7a84e541ae31c91d2c0b34d88cf3abbd18891ec6eedeea7e958af2\"]},\"/mono/contracts/contracts/upgradeable_contracts/BaseFeeManager.sol\":{\"keccak256\":\"0x8dc12d0cdf7fdd2e09986b87901e1976eab6ef2a0d9290f6d63d2dd72b5e67e4\",\"urls\":[\"bzzr://2195a6fdefb3c3d8b8524f52644ded14fd0cff8430bfd55b66b9928ac1573b9b\"]},\"/mono/contracts/contracts/upgradeable_contracts/FeeTypes.sol\":{\"keccak256\":\"0xa5290440ac63cc2436a8cd7a31876a817b77435f8d41a9a0f201dcfbfcde07a5\",\"urls\":[\"bzzr://f3ec5e843376670153b1a2803a2e33b0ca28339001e0defa7a6c2903834b6b32\"]},\"openzeppelin-solidity/contracts/math/SafeMath.sol\":{\"keccak256\":\"0xa1c5e1d9ebbf654d332ca8e7a5c04a6a6a9d142eeaab3b988c2c909c81a62bef\",\"urls\":[\"bzzr://d062fb4a1b6de1f036ee0e73364a2532c4757eb68e95dd8c5cbb2d17b8732c6a\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b50610745806100206000396000f3006080604052600436106100985763ffffffff7c0100000000000000000000000000000000000000000000000000000000600035041663054d46ec811461009d578063286c4066146100b757806334a9e148146100cf57806359d784641461009d5780636dd0a998146100e757806394da17cd146101115780639862f26f14610126578063f2ba956114610146578063ffd6619614610190575b600080fd5b3480156100a957600080fd5b506100b56004356101a5565b005b3480156100c357600080fd5b506100b56004356101a8565b3480156100db57600080fd5b506100b56004356102a4565b3480156100f357600080fd5b506100ff6004356103a0565b60408051918252519081900360200190f35b34801561011d57600080fd5b506100ff6103b1565b34801561013257600080fd5b506100ff6004356024351515604435610465565b34801561015257600080fd5b5061015b61058e565b604080517fffffffff000000000000000000000000000000000000000000000000000000009092168252519081900360200190f35b34801561019c57600080fd5b506100ff610631565b50565b80670de0b6b3a764000081106101bd57600080fd5b8160008060405160200180807f666f726569676e46656500000000000000000000000000000000000000000000815250600a0190506040516020818303038152906040526040518082805190602001908083835b602083106102305780518252601f199092019160209182019101610211565b51815160001960209485036101000a019081169019919091161790526040805194909201849003909320865285830196909652509284016000209490945550815185815291517fa1bb1f345e2d0374ec182de8bb6e574798f6b4b3e89046d75c479d7d5620c2169350918290030190a15050565b80670de0b6b3a764000081106102b957600080fd5b8160008060405160200180807f686f6d654665650000000000000000000000000000000000000000000000000081525060070190506040516020818303038152906040526040518082805190602001908083835b6020831061032c5780518252601f19909201916020918201910161030d565b51815160001960209485036101000a019081169019919091161790526040805194909201849003909320865285830196909652509284016000209490945550815185815291517f64afb51b44460415972849f8c01723cf624c005cbadf1024a2d8568694b73ac19350918290030190a15050565b60006103ab826106a4565b92915050565b600080600060405160200180807f686f6d654665650000000000000000000000000000000000000000000000000081525060070190506040516020818303038152906040526040518082805190602001908083835b602083106104255780518252601f199092019160209182019101610406565b51815160209384036101000a6000190180199092169116179052604080519290940182900390912086528501959095529290920160002054949350505050565b60008060405160200180807f686f6d652d66656500000000000000000000000000000000000000000000000081525060080190506040516020818303038152906040526040518082805190602001908083835b602083106104d75780518252601f1990920191602091820191016104b8565b5181516020939093036101000a600019018019909116921691909117905260405192018290039091208614925061051891505057610513610631565b610520565b6105206103b1565b905083151561055857610551670de0b6b3a7640000610545878463ffffffff6106c916565b9063ffffffff6106f216565b9150610586565b610583610573670de0b6b3a76400008363ffffffff61070716565b610545878463ffffffff6106c916565b91505b509392505050565b600060405160200180807f6d616e616765732d6f6e652d646972656374696f6e000000000000000000000081525060150190506040516020818303038152906040526040518082805190602001908083835b602083106105ff5780518252601f1990920191602091820191016105e0565b6001836020036101000a0380198251168184511680821785525050505050509050019150506040518091039020905090565b600080600060405160200180807f666f726569676e46656500000000000000000000000000000000000000000000815250600a019050604051602081830303815290604052604051808280519060200190808383602083106104255780518252601f199092019160209182019101610406565b6000816106b843600163ffffffff61070716565b408115156106c257fe5b0692915050565b60008215156106da575060006103ab565b508181028183828115156106ea57fe5b04146103ab57fe5b600081838115156106ff57fe5b049392505050565b60008282111561071357fe5b509003905600a165627a7a723058201edcadadfa5bcc4b169a6a7e6c41c366d8ab3fb988b345d4135c6bfe2621f2100029",
+  "deployedBytecode": "0x6080604052600436106100985763ffffffff7c0100000000000000000000000000000000000000000000000000000000600035041663054d46ec811461009d578063286c4066146100b757806334a9e148146100cf57806359d784641461009d5780636dd0a998146100e757806394da17cd146101115780639862f26f14610126578063f2ba956114610146578063ffd6619614610190575b600080fd5b3480156100a957600080fd5b506100b56004356101a5565b005b3480156100c357600080fd5b506100b56004356101a8565b3480156100db57600080fd5b506100b56004356102a4565b3480156100f357600080fd5b506100ff6004356103a0565b60408051918252519081900360200190f35b34801561011d57600080fd5b506100ff6103b1565b34801561013257600080fd5b506100ff6004356024351515604435610465565b34801561015257600080fd5b5061015b61058e565b604080517fffffffff000000000000000000000000000000000000000000000000000000009092168252519081900360200190f35b34801561019c57600080fd5b506100ff610631565b50565b80670de0b6b3a764000081106101bd57600080fd5b8160008060405160200180807f666f726569676e46656500000000000000000000000000000000000000000000815250600a0190506040516020818303038152906040526040518082805190602001908083835b602083106102305780518252601f199092019160209182019101610211565b51815160001960209485036101000a019081169019919091161790526040805194909201849003909320865285830196909652509284016000209490945550815185815291517fa1bb1f345e2d0374ec182de8bb6e574798f6b4b3e89046d75c479d7d5620c2169350918290030190a15050565b80670de0b6b3a764000081106102b957600080fd5b8160008060405160200180807f686f6d654665650000000000000000000000000000000000000000000000000081525060070190506040516020818303038152906040526040518082805190602001908083835b6020831061032c5780518252601f19909201916020918201910161030d565b51815160001960209485036101000a019081169019919091161790526040805194909201849003909320865285830196909652509284016000209490945550815185815291517f64afb51b44460415972849f8c01723cf624c005cbadf1024a2d8568694b73ac19350918290030190a15050565b60006103ab826106a4565b92915050565b600080600060405160200180807f686f6d654665650000000000000000000000000000000000000000000000000081525060070190506040516020818303038152906040526040518082805190602001908083835b602083106104255780518252601f199092019160209182019101610406565b51815160209384036101000a6000190180199092169116179052604080519290940182900390912086528501959095529290920160002054949350505050565b60008060405160200180807f686f6d652d66656500000000000000000000000000000000000000000000000081525060080190506040516020818303038152906040526040518082805190602001908083835b602083106104d75780518252601f1990920191602091820191016104b8565b5181516020939093036101000a600019018019909116921691909117905260405192018290039091208614925061051891505057610513610631565b610520565b6105206103b1565b905083151561055857610551670de0b6b3a7640000610545878463ffffffff6106c916565b9063ffffffff6106f216565b9150610586565b610583610573670de0b6b3a76400008363ffffffff61070716565b610545878463ffffffff6106c916565b91505b509392505050565b600060405160200180807f6d616e616765732d6f6e652d646972656374696f6e000000000000000000000081525060150190506040516020818303038152906040526040518082805190602001908083835b602083106105ff5780518252601f1990920191602091820191016105e0565b6001836020036101000a0380198251168184511680821785525050505050509050019150506040518091039020905090565b600080600060405160200180807f666f726569676e46656500000000000000000000000000000000000000000000815250600a019050604051602081830303815290604052604051808280519060200190808383602083106104255780518252601f199092019160209182019101610406565b6000816106b843600163ffffffff61070716565b408115156106c257fe5b0692915050565b60008215156106da575060006103ab565b508181028183828115156106ea57fe5b04146103ab57fe5b600081838115156106ff57fe5b049392505050565b60008282111561071357fe5b509003905600a165627a7a723058201edcadadfa5bcc4b169a6a7e6c41c366d8ab3fb988b345d4135c6bfe2621f2100029",
+  "sourceMap": "80:573:14:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;80:573:14;;;;;;;",
+  "deployedSourceMap": "80:573:14:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;128:125;;8:9:-1;5:2;;;30:1;27;20:12;5:2;-1:-1;128:125:14;;;;;;;1439:159:29;;8:9:-1;5:2;;;30:1;27;20:12;5:2;-1:-1;1439:159:29;;;;;1168:150;;8:9:-1;5:2;;;30:1;27;20:12;5:2;-1:-1;1168:150:29;;;;;539:112:14;;8:9:-1;5:2;;;30:1;27;20:12;5:2;-1:-1;539:112:14;;;;;;;;;;;;;;;;;;;;;1324:109:29;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1324:109:29;;;;717:323;;8:9:-1;5:2;;;30:1;27;20:12;5:2;-1:-1;717:323:29;;;;;;;;;;;389:144:14;;8:9:-1;5:2;;;30:1;27;20:12;5:2;389:144:14;;;;;;;;;;;;;;;;;;;;;;;1604:115:29;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1604:115:29;;;;128:125:14;;:::o;1439:159:29:-;1494:4;511:7;1096:14;;1088:23;;;;;;1549:4;1510:11;:36;679:30;;;;;;;;;;;;;;;;49:4:-1;39:7;30;26:21;22:32;13:7;6:49;679:30:29;;;669:41;;;;;;;;;;;;;36:153:-1;66:2;58:11;;36:153;;176:10;;164:23;;-1:-1;;139:12;;;;98:2;89:12;;;;114;36:153;;;299:10;344;;-1:-1;;263:2;259:12;;;254:3;250:22;246:30;340:21;;;311:9;;295:26;;;;377:20;365:33;;669:41:29;;;;;;;;;;;;;1510:36;;;;;;;;;-1:-1:-1;1510:36:29;;;-1:-1:-1;1510:36:29;:43;;;;-1:-1:-1;1568:23:29;;;;;;;;;-1:-1:-1;1568:23:29;;;;;;;1439:159;;:::o;1168:150::-;1220:4;511:7;1096:14;;1088:23;;;;;;1272:4;1236:11;:33;583:27;;;;;;;;;;;;;;;;49:4:-1;39:7;30;26:21;22:32;13:7;6:49;583:27:29;;;573:38;;;;;;;;;;;;;36:153:-1;66:2;58:11;;36:153;;176:10;;164:23;;-1:-1;;139:12;;;;98:2;89:12;;;;114;36:153;;;299:10;344;;-1:-1;;263:2;259:12;;;254:3;250:22;246:30;340:21;;;311:9;;295:26;;;;377:20;365:33;;573:38:29;;;;;;;;;;;;;1236:33;;;;;;;;;-1:-1:-1;1236:33:29;;;-1:-1:-1;1236:33:29;:40;;;;-1:-1:-1;1291:20:29;;;;;;;;;-1:-1:-1;1291:20:29;;;;;;;1168:150;;:::o;539:112:14:-;598:7;624:20;637:6;624:12;:20::i;:::-;617:27;539:112;-1:-1:-1;;539:112:14:o;1324:109:29:-;1367:7;1393:11;:33;583:27;;;;;;;;;;;;;;;;49:4:-1;39:7;30;26:21;22:32;13:7;6:49;583:27:29;;;573:38;;;;;;;;;;;;;36:153:-1;66:2;58:11;;36:153;;176:10;;164:23;;-1:-1;;139:12;;;;98:2;89:12;;;;114;36:153;;;299:10;344;;263:2;259:12;;;254:3;250:22;-1:-1;;246:30;311:9;;295:26;;;340:21;;377:20;365:33;;573:38:29;;;;;;;;;;;;;1393:33;;;;;;;;;;;;-1:-1:-1;1393:33:29;;;1324:109;-1:-1:-1;;;;1324:109:29:o;717:323::-;809:7;828:11;96:28:41;;;;;;;;;;;;;;;;49:4:-1;39:7;30;26:21;22:32;13:7;6:49;96:28:41;;;86:39;;;;;;;;;;;;;36:153:-1;66:2;58:11;;36:153;;176:10;;164:23;;-1:-1;;139:12;;;;98:2;89:12;;;;114;36:153;;;299:10;344;;263:2;259:12;;;;254:3;250:22;-1:-1;;246:30;311:9;;295:26;;;340:21;;377:20;;;;365:33;;86:39:41;;;;;;;;;;842:20:29;;;-1:-1:-1;842:53:29;;-1:-1:-1;;842:53:29;880:15;:13;:15::i;:::-;842:53;;;865:12;:10;:12::i;:::-;828:67;;910:8;909:9;905:75;;;941:28;511:7;941:15;:6;952:3;941:15;:10;:15;:::i;:::-;:19;:28;:19;:28;:::i;:::-;934:35;;;;905:75;996:37;1016:16;511:7;1028:3;1016:16;:11;:16;:::i;:::-;996:15;:6;1007:3;996:15;:10;:15;:::i;:37::-;989:44;;717:323;;;;;;;:::o;389:144:14:-;441:6;483:41;;;;;;;;;;;;;;;;49:4:-1;39:7;30;26:21;22:32;13:7;6:49;483:41:14;;;473:52;;;;;;;;;;;;;36:153:-1;66:2;58:11;;36:153;;176:10;;164:23;;-1:-1;;139:12;;;;98:2;89:12;;;;114;36:153;;;274:1;267:3;263:2;259:12;254:3;250:22;246:30;315:4;311:9;305:3;299:10;295:26;356:4;350:3;344:10;340:21;389:7;380;377:20;372:3;365:33;3:399;;;473:52:14;;;;;;;;;;;;;;;;459:67;;389:144;:::o;1604:115:29:-;1650:7;1676:11;:36;679:30;;;;;;;;;;;;;;;;49:4:-1;39:7;30;26:21;22:32;13:7;6:49;679:30:29;;;669:41;;;;;;;;;;;;;66:2:-1;58:11;;36:153;;176:10;;164:23;;-1:-1;;139:12;;;;98:2;89:12;;;;114;36:153;;2011:136:29;2066:7;2134:6;2110:19;:12;2127:1;2110:19;:16;:19;:::i;:::-;2100:30;2092:48;;;;;;;;;2011:136;-1:-1:-1;;2011:136:29:o;203:380:72:-;263:9;489:7;;485:36;;;-1:-1:-1;513:1:72;506:8;;485:36;-1:-1:-1;531:7:72;;;536:2;531;:7;551:6;;;;;;;;:12;544:20;;;665:283;725:7;941:2;936;:7;;;;;;;;;665:283;-1:-1:-1;;;665:283:72:o;1060:116::-;1120:7;1142:8;;;;1135:16;;;;-1:-1:-1;1164:7:72;;;1060:116::o",
+  "source": "pragma solidity 0.4.24;\n\nimport \"../upgradeable_contracts/BaseFeeManager.sol\";\n\ncontract FeeManagerMock is BaseFeeManager {\n    function distributeFeeFromAffirmation(uint256 _fee) external {\n        // solhint-disable-previous-line no-empty-blocks\n    }\n\n    function distributeFeeFromSignatures(uint256 _fee) external {\n        // solhint-disable-previous-line no-empty-blocks\n    }\n\n    function getFeeManagerMode() external pure returns (bytes4) {\n        return bytes4(keccak256(abi.encodePacked(\"manages-one-direction\")));\n    }\n\n    function randomTest(uint256 _count) external view returns (uint256) {\n        return super.random(_count);\n    }\n}\n",
+  "sourcePath": "/mono/contracts/contracts/mocks/FeeManagerMock.sol",
+  "ast": {
+    "absolutePath": "/mono/contracts/contracts/mocks/FeeManagerMock.sol",
+    "exportedSymbols": {
+      "FeeManagerMock": [
+        1596
+      ]
+    },
+    "id": 1597,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1552,
+        "literals": [
+          "solidity",
+          "0.4",
+          ".24"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:14"
+      },
+      {
+        "absolutePath": "/mono/contracts/contracts/upgradeable_contracts/BaseFeeManager.sol",
+        "file": "../upgradeable_contracts/BaseFeeManager.sol",
+        "id": 1553,
+        "nodeType": "ImportDirective",
+        "scope": 1597,
+        "sourceUnit": 2759,
+        "src": "25:53:14",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 1554,
+              "name": "BaseFeeManager",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 2758,
+              "src": "107:14:14",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_BaseFeeManager_$2758",
+                "typeString": "contract BaseFeeManager"
+              }
+            },
+            "id": 1555,
+            "nodeType": "InheritanceSpecifier",
+            "src": "107:14:14"
+          }
+        ],
+        "contractDependencies": [
+          1908,
+          2758,
+          4815
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 1596,
+        "linearizedBaseContracts": [
+          1596,
+          2758,
+          4815,
+          1908
+        ],
+        "name": "FeeManagerMock",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 1560,
+              "nodeType": "Block",
+              "src": "189:64:14",
+              "statements": []
+            },
+            "documentation": null,
+            "id": 1561,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "distributeFeeFromAffirmation",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1558,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1557,
+                  "name": "_fee",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1561,
+                  "src": "166:12:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 1556,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "166:7:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "165:14:14"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 1559,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "189:0:14"
+            },
+            "scope": 1596,
+            "src": "128:125:14",
+            "stateMutability": "nonpayable",
+            "superFunction": 2727,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 1566,
+              "nodeType": "Block",
+              "src": "319:64:14",
+              "statements": []
+            },
+            "documentation": null,
+            "id": 1567,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "distributeFeeFromSignatures",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1564,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1563,
+                  "name": "_fee",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1567,
+                  "src": "296:12:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 1562,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "296:7:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "295:14:14"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 1565,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "319:0:14"
+            },
+            "scope": 1596,
+            "src": "259:124:14",
+            "stateMutability": "nonpayable",
+            "superFunction": 2732,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 1581,
+              "nodeType": "Block",
+              "src": "449:84:14",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "arguments": [
+                          {
+                            "argumentTypes": null,
+                            "arguments": [
+                              {
+                                "argumentTypes": null,
+                                "hexValue": "6d616e616765732d6f6e652d646972656374696f6e",
+                                "id": 1576,
+                                "isConstant": false,
+                                "isLValue": false,
+                                "isPure": true,
+                                "kind": "string",
+                                "lValueRequested": false,
+                                "nodeType": "Literal",
+                                "src": "500:23:14",
+                                "subdenomination": null,
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_stringliteral_f2aed8f73424d28ab545e2deee577cd552a109733fc6571e455a191821641187",
+                                  "typeString": "literal_string \"manages-one-direction\""
+                                },
+                                "value": "manages-one-direction"
+                              }
+                            ],
+                            "expression": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_stringliteral_f2aed8f73424d28ab545e2deee577cd552a109733fc6571e455a191821641187",
+                                  "typeString": "literal_string \"manages-one-direction\""
+                                }
+                              ],
+                              "expression": {
+                                "argumentTypes": null,
+                                "id": 1574,
+                                "name": "abi",
+                                "nodeType": "Identifier",
+                                "overloadedDeclarations": [],
+                                "referencedDeclaration": 10884,
+                                "src": "483:3:14",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_magic_abi",
+                                  "typeString": "abi"
+                                }
+                              },
+                              "id": 1575,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "lValueRequested": false,
+                              "memberName": "encodePacked",
+                              "nodeType": "MemberAccess",
+                              "referencedDeclaration": null,
+                              "src": "483:16:14",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_function_abiencodepacked_pure$__$returns$_t_bytes_memory_ptr_$",
+                                "typeString": "function () pure returns (bytes memory)"
+                              }
+                            },
+                            "id": 1577,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "kind": "functionCall",
+                            "lValueRequested": false,
+                            "names": [],
+                            "nodeType": "FunctionCall",
+                            "src": "483:41:14",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_bytes_memory_ptr",
+                              "typeString": "bytes memory"
+                            }
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_bytes_memory_ptr",
+                              "typeString": "bytes memory"
+                            }
+                          ],
+                          "id": 1573,
+                          "name": "keccak256",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 10891,
+                          "src": "473:9:14",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_function_sha3_pure$__$returns$_t_bytes32_$",
+                            "typeString": "function () pure returns (bytes32)"
+                          }
+                        },
+                        "id": 1578,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "functionCall",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "473:52:14",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        }
+                      ],
+                      "id": 1572,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "lValueRequested": false,
+                      "nodeType": "ElementaryTypeNameExpression",
+                      "src": "466:6:14",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_type$_t_bytes4_$",
+                        "typeString": "type(bytes4)"
+                      },
+                      "typeName": "bytes4"
+                    },
+                    "id": 1579,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": true,
+                    "kind": "typeConversion",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "466:60:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes4",
+                      "typeString": "bytes4"
+                    }
+                  },
+                  "functionReturnParameters": 1571,
+                  "id": 1580,
+                  "nodeType": "Return",
+                  "src": "459:67:14"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 1582,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "getFeeManagerMode",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1568,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "415:2:14"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 1571,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1570,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1582,
+                  "src": "441:6:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes4",
+                    "typeString": "bytes4"
+                  },
+                  "typeName": {
+                    "id": 1569,
+                    "name": "bytes4",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "441:6:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes4",
+                      "typeString": "bytes4"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "440:8:14"
+            },
+            "scope": 1596,
+            "src": "389:144:14",
+            "stateMutability": "pure",
+            "superFunction": 2737,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 1594,
+              "nodeType": "Block",
+              "src": "607:44:14",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 1591,
+                        "name": "_count",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 1584,
+                        "src": "637:6:14",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 1589,
+                        "name": "super",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 10969,
+                        "src": "624:5:14",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_super$_FeeManagerMock_$1596",
+                          "typeString": "contract super FeeManagerMock"
+                        }
+                      },
+                      "id": 1590,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "random",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 2757,
+                      "src": "624:12:14",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_view$_t_uint256_$returns$_t_uint256_$",
+                        "typeString": "function (uint256) view returns (uint256)"
+                      }
+                    },
+                    "id": 1592,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "624:20:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "functionReturnParameters": 1588,
+                  "id": 1593,
+                  "nodeType": "Return",
+                  "src": "617:27:14"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 1595,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "randomTest",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1585,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1584,
+                  "name": "_count",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1595,
+                  "src": "559:14:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 1583,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "559:7:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "558:16:14"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 1588,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1587,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1595,
+                  "src": "598:7:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 1586,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "598:7:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "597:9:14"
+            },
+            "scope": 1596,
+            "src": "539:112:14",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "external"
+          }
+        ],
+        "scope": 1597,
+        "src": "80:573:14"
+      }
+    ],
+    "src": "0:654:14"
+  },
+  "legacyAST": {
+    "absolutePath": "/mono/contracts/contracts/mocks/FeeManagerMock.sol",
+    "exportedSymbols": {
+      "FeeManagerMock": [
+        1596
+      ]
+    },
+    "id": 1597,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1552,
+        "literals": [
+          "solidity",
+          "0.4",
+          ".24"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:14"
+      },
+      {
+        "absolutePath": "/mono/contracts/contracts/upgradeable_contracts/BaseFeeManager.sol",
+        "file": "../upgradeable_contracts/BaseFeeManager.sol",
+        "id": 1553,
+        "nodeType": "ImportDirective",
+        "scope": 1597,
+        "sourceUnit": 2759,
+        "src": "25:53:14",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 1554,
+              "name": "BaseFeeManager",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 2758,
+              "src": "107:14:14",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_BaseFeeManager_$2758",
+                "typeString": "contract BaseFeeManager"
+              }
+            },
+            "id": 1555,
+            "nodeType": "InheritanceSpecifier",
+            "src": "107:14:14"
+          }
+        ],
+        "contractDependencies": [
+          1908,
+          2758,
+          4815
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 1596,
+        "linearizedBaseContracts": [
+          1596,
+          2758,
+          4815,
+          1908
+        ],
+        "name": "FeeManagerMock",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 1560,
+              "nodeType": "Block",
+              "src": "189:64:14",
+              "statements": []
+            },
+            "documentation": null,
+            "id": 1561,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "distributeFeeFromAffirmation",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1558,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1557,
+                  "name": "_fee",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1561,
+                  "src": "166:12:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 1556,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "166:7:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "165:14:14"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 1559,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "189:0:14"
+            },
+            "scope": 1596,
+            "src": "128:125:14",
+            "stateMutability": "nonpayable",
+            "superFunction": 2727,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 1566,
+              "nodeType": "Block",
+              "src": "319:64:14",
+              "statements": []
+            },
+            "documentation": null,
+            "id": 1567,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "distributeFeeFromSignatures",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1564,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1563,
+                  "name": "_fee",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1567,
+                  "src": "296:12:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 1562,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "296:7:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "295:14:14"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 1565,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "319:0:14"
+            },
+            "scope": 1596,
+            "src": "259:124:14",
+            "stateMutability": "nonpayable",
+            "superFunction": 2732,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 1581,
+              "nodeType": "Block",
+              "src": "449:84:14",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "arguments": [
+                          {
+                            "argumentTypes": null,
+                            "arguments": [
+                              {
+                                "argumentTypes": null,
+                                "hexValue": "6d616e616765732d6f6e652d646972656374696f6e",
+                                "id": 1576,
+                                "isConstant": false,
+                                "isLValue": false,
+                                "isPure": true,
+                                "kind": "string",
+                                "lValueRequested": false,
+                                "nodeType": "Literal",
+                                "src": "500:23:14",
+                                "subdenomination": null,
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_stringliteral_f2aed8f73424d28ab545e2deee577cd552a109733fc6571e455a191821641187",
+                                  "typeString": "literal_string \"manages-one-direction\""
+                                },
+                                "value": "manages-one-direction"
+                              }
+                            ],
+                            "expression": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_stringliteral_f2aed8f73424d28ab545e2deee577cd552a109733fc6571e455a191821641187",
+                                  "typeString": "literal_string \"manages-one-direction\""
+                                }
+                              ],
+                              "expression": {
+                                "argumentTypes": null,
+                                "id": 1574,
+                                "name": "abi",
+                                "nodeType": "Identifier",
+                                "overloadedDeclarations": [],
+                                "referencedDeclaration": 10884,
+                                "src": "483:3:14",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_magic_abi",
+                                  "typeString": "abi"
+                                }
+                              },
+                              "id": 1575,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "lValueRequested": false,
+                              "memberName": "encodePacked",
+                              "nodeType": "MemberAccess",
+                              "referencedDeclaration": null,
+                              "src": "483:16:14",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_function_abiencodepacked_pure$__$returns$_t_bytes_memory_ptr_$",
+                                "typeString": "function () pure returns (bytes memory)"
+                              }
+                            },
+                            "id": 1577,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "kind": "functionCall",
+                            "lValueRequested": false,
+                            "names": [],
+                            "nodeType": "FunctionCall",
+                            "src": "483:41:14",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_bytes_memory_ptr",
+                              "typeString": "bytes memory"
+                            }
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_bytes_memory_ptr",
+                              "typeString": "bytes memory"
+                            }
+                          ],
+                          "id": 1573,
+                          "name": "keccak256",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 10891,
+                          "src": "473:9:14",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_function_sha3_pure$__$returns$_t_bytes32_$",
+                            "typeString": "function () pure returns (bytes32)"
+                          }
+                        },
+                        "id": 1578,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "functionCall",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "473:52:14",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        }
+                      ],
+                      "id": 1572,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "lValueRequested": false,
+                      "nodeType": "ElementaryTypeNameExpression",
+                      "src": "466:6:14",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_type$_t_bytes4_$",
+                        "typeString": "type(bytes4)"
+                      },
+                      "typeName": "bytes4"
+                    },
+                    "id": 1579,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": true,
+                    "kind": "typeConversion",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "466:60:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes4",
+                      "typeString": "bytes4"
+                    }
+                  },
+                  "functionReturnParameters": 1571,
+                  "id": 1580,
+                  "nodeType": "Return",
+                  "src": "459:67:14"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 1582,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "getFeeManagerMode",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1568,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "415:2:14"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 1571,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1570,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1582,
+                  "src": "441:6:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes4",
+                    "typeString": "bytes4"
+                  },
+                  "typeName": {
+                    "id": 1569,
+                    "name": "bytes4",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "441:6:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes4",
+                      "typeString": "bytes4"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "440:8:14"
+            },
+            "scope": 1596,
+            "src": "389:144:14",
+            "stateMutability": "pure",
+            "superFunction": 2737,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 1594,
+              "nodeType": "Block",
+              "src": "607:44:14",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 1591,
+                        "name": "_count",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 1584,
+                        "src": "637:6:14",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 1589,
+                        "name": "super",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 10969,
+                        "src": "624:5:14",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_super$_FeeManagerMock_$1596",
+                          "typeString": "contract super FeeManagerMock"
+                        }
+                      },
+                      "id": 1590,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "random",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 2757,
+                      "src": "624:12:14",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_view$_t_uint256_$returns$_t_uint256_$",
+                        "typeString": "function (uint256) view returns (uint256)"
+                      }
+                    },
+                    "id": 1592,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "624:20:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "functionReturnParameters": 1588,
+                  "id": 1593,
+                  "nodeType": "Return",
+                  "src": "617:27:14"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 1595,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "randomTest",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1585,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1584,
+                  "name": "_count",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1595,
+                  "src": "559:14:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 1583,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "559:7:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "558:16:14"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 1588,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1587,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1595,
+                  "src": "598:7:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 1586,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "598:7:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "597:9:14"
+            },
+            "scope": 1596,
+            "src": "539:112:14",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "external"
+          }
+        ],
+        "scope": 1597,
+        "src": "80:573:14"
+      }
+    ],
+    "src": "0:654:14"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.4.24+commit.e67f0147.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.0.11",
+  "updatedAt": "2019-09-03T09:43:49.615Z",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}
