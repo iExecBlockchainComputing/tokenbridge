@@ -138,7 +138,7 @@ export class Bridge extends React.Component {
       )
       return
     }
-    if (!isExternalErc20 && isGreaterThan(amount, foreignStore.maxPerTx)) {
+    if (isGreaterThan(amount, foreignStore.maxPerTx)) {
       alertStore.pushError(
         `The amount is above maximum amount per transaction.\nThe max per transaction is: ${foreignStore.maxPerTx} ${
           foreignStore.symbol
