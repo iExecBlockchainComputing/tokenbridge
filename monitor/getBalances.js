@@ -3,7 +3,7 @@ const BN = require('bignumber.js')
 const Web3 = require('web3')
 const logger = require('./logger')('getBalances')
 const { BRIDGE_MODES } = require('../commons')
-
+const { toDecimals, fromDecimals} = require('./utils/decimals')
 const Web3Utils = Web3.utils
 
 const { HOME_RPC_URL, FOREIGN_RPC_URL, HOME_BRIDGE_ADDRESS, FOREIGN_BRIDGE_ADDRESS } = process.env
@@ -80,7 +80,8 @@ async function main(bridgeMode) {
     const erc20Contract = new web3Foreign.eth.Contract(ERC20_ABI, erc20Address)
     logger.debug('calling erc20Contract.methods.balanceOf')
     const foreignErc20Balance = await erc20Contract.methods.balanceOf(FOREIGN_BRIDGE_ADDRESS).call()
-
+    logger.debug('calling foreignBridge.methods.decimalShift')
+    const decimalShift = await foreignBridge.methods.decimalShift().call()
     const homeBridge = new web3Home.eth.Contract(HOME_ERC_TO_NATIVE_ABI, HOME_BRIDGE_ADDRESS)
     logger.debug('calling homeBridge.methods.blockRewardContract')
     const blockRewardAddress = await homeBridge.methods.blockRewardContract().call()
@@ -93,16 +94,18 @@ async function main(bridgeMode) {
     const mintedCoinsBN = new BN(mintedCoins)
     const burntCoinsBN = new BN(burntCoins)
     const totalSupplyBN = mintedCoinsBN.minus(burntCoinsBN)
-    const foreignErc20BalanceBN = new BN(foreignErc20Balance)
+
+    const foreignErc20BalanceBN = new BN(toDecimals(foreignErc20Balance, 18 - decimalShift))
 
     const diff = foreignErc20BalanceBN.minus(totalSupplyBN).toFixed()
+    
     logger.debug('Done')
     return {
       home: {
         totalSupply: Web3Utils.fromWei(totalSupplyBN.toFixed())
       },
       foreign: {
-        erc20Balance: Web3Utils.fromWei(foreignErc20Balance)
+        erc20Balance: fromDecimals(foreignErc20Balance, 18 - decimalShift)
       },
       balanceDiff: Number(Web3Utils.fromWei(diff)),
       lastChecked: Math.floor(Date.now() / 1000)

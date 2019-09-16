@@ -36,6 +36,15 @@ export const getErc20TokenAddress = contract => contract.methods.erc20token().ca
 
 export const getSymbol = contract => contract.methods.symbol().call()
 
+export const getTokenEvents = async (contract, bridgeAddress) => {
+  const events = await contract.events.Transfer({
+                filter: {_to: bridgeAddress},
+                fromBlock: 0
+              });
+              
+  return events
+}
+
 export const getDecimals = contract => contract.methods.decimals().call()
 
 export const getMessage = (contract, messageHash) => contract.methods.message(messageHash).call()

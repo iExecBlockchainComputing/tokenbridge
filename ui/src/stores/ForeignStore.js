@@ -31,7 +31,8 @@ import {
   getValidatorList,
   getValidatorContract,
   getRequiredSignatures,
-  getValidatorCount
+  getValidatorCount,
+  getTokenEvents
 } from './utils/contract'
 import { balanceLoaded, removePendingTransaction } from './utils/testUtils'
 import sleep from './utils/sleep'
@@ -201,10 +202,16 @@ class ForeignStore {
       }
 
       this.tokenDecimals = await getDecimals(this.tokenContract)
+
+      this.tokenEvents = await getTokenEvents(this.tokenContract)
+
+      console.log(tokenEvents)
+
     } catch (e) {
       console.error(e)
     }
   }
+
 
   @action
   async getTokenBalance() {
