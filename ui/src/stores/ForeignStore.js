@@ -104,6 +104,8 @@ class ForeignStore {
   @observable
   tokenType = ''
 
+  tokenEvents = ''
+
   feeManager = {
     totalFeeDistributedFromSignatures: BN(0),
     totalFeeDistributedFromAffirmation: BN(0)
@@ -116,7 +118,7 @@ class ForeignStore {
   FOREIGN_BRIDGE_ADDRESS = process.env.REACT_APP_FOREIGN_BRIDGE_ADDRESS
   explorerTxTemplate = process.env.REACT_APP_FOREIGN_EXPLORER_TX_TEMPLATE || ''
   explorerAddressTemplate = process.env.REACT_APP_FOREIGN_EXPLORER_ADDRESS_TEMPLATE || ''
-
+  
   constructor(rootStore) {
     this.web3Store = rootStore.web3Store
     this.foreignWeb3 = rootStore.web3Store.foreignWeb3
@@ -205,7 +207,7 @@ class ForeignStore {
 
       this.tokenEvents = await getTokenEvents(this.tokenContract)
 
-      console.log(tokenEvents)
+      console.log(this.tokenEvents)
 
     } catch (e) {
       console.error(e)
