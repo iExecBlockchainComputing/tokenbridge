@@ -39,7 +39,7 @@ export const getSymbol = contract => contract.methods.symbol().call()
 export const getTokenTransferPerDay = async (contract, bridgeAddress, blockNumber, blocksPerDay) => {
 
   const events = await contract.getPastEvents('allEvents', {
-    to: bridgeAddress,
+    //filter: {to: bridgeAddress},
     fromBlock: blockNumber - blocksPerDay,
     toBlock: "latest"
   });
@@ -47,7 +47,7 @@ export const getTokenTransferPerDay = async (contract, bridgeAddress, blockNumbe
   var todayValue = 0
 
   events.forEach(function(value, key, map) {
-    if (value.event == "Transfer") {
+    if (value.event == "Transfer" && value.returnValues.to == bridgeAddress) {
       todayValue += Number(value.returnValues.value)
     }
   })
