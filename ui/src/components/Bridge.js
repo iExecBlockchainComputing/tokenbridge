@@ -13,7 +13,7 @@ import { NetworkDetails } from './NetworkDetails'
 import { TransferAlert } from './TransferAlert'
 import { getFeeToApply, validFee } from '../stores/utils/rewardable'
 import { inject, observer } from 'mobx-react'
-import { toDecimals } from '../stores/utils/decimals'
+import { toDecimals, fromDecimals } from '../stores/utils/decimals'
 
 @inject('RootStore')
 @observer
@@ -149,6 +149,14 @@ export class Bridge extends React.Component {
     if (isGreaterThan(amount, foreignStore.maxCurrentDeposit)) {
       alertStore.pushError(
         `The amount is above current daily limit.\nThe max withdrawal today: ${foreignStore.maxCurrentDeposit} ${
+          foreignStore.symbol
+        }`
+      )
+      return
+    }
+    if (isGreaterThan(toDecimals(amount, foreignStore.tokenDecimals), toDecimals(foreignStore.dailyLimit, foreignStore.tokenDecimals) - foreignStore.tokenTodayTransfer)) {
+      alertStore.pushError(
+        `The amount is above current daily limit.\nThe max withdrawal today: ${foreignStore.dailyLimit - fromDecimals(foreignStore.tokenTodayTransfer, foreignStore.tokenDecimals)} ${
           foreignStore.symbol
         }`
       )

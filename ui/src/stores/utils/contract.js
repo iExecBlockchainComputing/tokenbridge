@@ -36,13 +36,23 @@ export const getErc20TokenAddress = contract => contract.methods.erc20token().ca
 
 export const getSymbol = contract => contract.methods.symbol().call()
 
-export const getTokenEvents = async (contract, bridgeAddress) => {
-  const events = await contract.events.Transfer({
-                filter: {_to: bridgeAddress},
-                fromBlock: 0
-              });
-              
-  return events
+export const getTokenTransferPerDay = async (contract, bridgeAddress, blockNumber, blocksPerDay) => {
+
+  const events = await contract.getPastEvents('allEvents', {
+    to: bridgeAddress,
+    fromBlock: blockNumber - blocksPerDay,
+    toBlock: "latest"
+  });
+
+  var todayValue = 0
+
+  events.forEach(function(value, key, map) {
+    if (value.event == "Transfer") {
+      todayValue += Number(value.returnValues.value)
+    }
+  })
+
+  return todayValue
 }
 
 export const getDecimals = contract => contract.methods.decimals().call()

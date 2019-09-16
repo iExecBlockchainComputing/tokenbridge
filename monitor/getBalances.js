@@ -80,12 +80,7 @@ async function main(bridgeMode) {
     const erc20Contract = new web3Foreign.eth.Contract(ERC20_ABI, erc20Address)
     logger.debug('calling erc20Contract.methods.balanceOf')
     const foreignErc20Balance = await erc20Contract.methods.balanceOf(FOREIGN_BRIDGE_ADDRESS).call()
-
     const decimalShift = await foreignBridge.methods.decimalShift().call()
-   
-    console.log(decimalShift)
-   
-	 
     const homeBridge = new web3Home.eth.Contract(HOME_ERC_TO_NATIVE_ABI, HOME_BRIDGE_ADDRESS)
     logger.debug('calling homeBridge.methods.blockRewardContract')
     const blockRewardAddress = await homeBridge.methods.blockRewardContract().call()
