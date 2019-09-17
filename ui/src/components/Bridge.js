@@ -156,7 +156,7 @@ export class Bridge extends React.Component {
     }
     if (isGreaterThan(toDecimals(amount, foreignStore.tokenDecimals), toDecimals(foreignStore.dailyLimit, foreignStore.tokenDecimals) - foreignStore.tokenTodayTransfer)) {
       alertStore.pushError(
-        `The amount is above current daily limit.\nThe max withdrawal today: ${foreignStore.dailyLimit - fromDecimals(foreignStore.tokenTodayTransfer, foreignStore.tokenDecimals)} ${
+        `The amount is above current daily limit.\nThe max withdrawal today: ${foreignStore.getMaxCurrentDepositEvents()} ${
           foreignStore.symbol
         }`
       )

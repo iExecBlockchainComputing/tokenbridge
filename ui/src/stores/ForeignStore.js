@@ -38,7 +38,7 @@ import { balanceLoaded, removePendingTransaction } from './utils/testUtils'
 import sleep from './utils/sleep'
 import BN from 'bignumber.js'
 import { processLargeArrayAsync } from './utils/array'
-import { fromDecimals } from './utils/decimals'
+import { fromDecimals, toDecimals } from './utils/decimals'
 
 class ForeignStore {
   @observable
@@ -378,6 +378,10 @@ class ForeignStore {
   
   getDailyQuotaCompletedFromEvents() {
     return this.dailyLimit ? (fromDecimals(this.tokenTodayTransfer, this.tokenDecimals) / this.dailyLimit) * 100 : 0
+  }
+
+  getMaxCurrentDepositEvents() {
+    return fromDecimals(toDecimals(this.dailyLimit, this.tokenDecimals) - this.tokenTodayTransfer, this.tokenDecimals)
   }
 
   async waitUntilProcessed(txHash) {
