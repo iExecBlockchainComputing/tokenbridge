@@ -51,4 +51,10 @@ export class StatusPage extends React.Component {
       </div>
     )
   }
+  componentDidMount() {
+    this.interval = setInterval(() => this.setState({ time: Date.now() }), 1000);
+  }
+  componentWillUnmount() {
+    clearInterval(this.interval);
+  }
 }

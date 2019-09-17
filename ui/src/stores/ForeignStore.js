@@ -231,7 +231,7 @@ class ForeignStore {
   async getTokenTodayTransfer() {
   	 try {
       this.web3Store.getWeb3Promise.then(async () => {
-        this.tokenTodayTransfer = await getTokenTransferPerDay(this.tokenContract, this.FOREIGN_BRIDGE_ADDRESS, await getBlockNumber(this.foreignWeb3), this.BLOCKS_PER_DAY)
+        this.tokenTodayTransfer = await getTokenTransferPerDay(this.tokenContract, this.FOREIGN_BRIDGE_ADDRESS, this.foreignWeb3, this.BLOCKS_PER_DAY, this.foreignBridge)
       })
     } catch (e) {
       console.error(e)

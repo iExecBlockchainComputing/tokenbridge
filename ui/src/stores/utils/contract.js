@@ -1,6 +1,7 @@
 import BN from 'bignumber.js'
 import { fromDecimals } from './decimals'
 import { fromWei } from 'web3-utils'
+import { getBlockNumber } from './web3'
 import { getValidatorList as commonGetValidatorList, getPastEvents as commonGetPastEvents } from '../../../../commons'
 
 export const ZERO_ADDRESS = '0x0000000000000000000000000000000000000000'
@@ -36,7 +37,17 @@ export const getErc20TokenAddress = contract => contract.methods.erc20token().ca
 
 export const getSymbol = contract => contract.methods.symbol().call()
 
-export const getTokenTransferPerDay = async (contract, bridgeAddress, blockNumber, blocksPerDay) => {
+const asyncForEach = async (array, callback) => {
+  for (let index = 0; index < array.length; index++) {
+    await callback(array[index], index, array);
+  }
+}
+
+export const getTokenTransferPerDay = async (contract, bridgeAddress, web3Provider, blocksPerDay, foreignBridge) => {
+
+  const blockNumber = await getBlockNumber(web3Provider)
+
+  const currentDay = await foreignBridge.methods.getCurrentDay().call()
 
   const events = await contract.getPastEvents('allEvents', {
     //filter: {to: bridgeAddress},
@@ -46,13 +57,18 @@ export const getTokenTransferPerDay = async (contract, bridgeAddress, blockNumbe
 
   var todayValue = 0
 
-  events.forEach(function(value, key, map) {
-    if (value.event == "Transfer" && value.returnValues.to == bridgeAddress) {
+  await asyncForEach(events, async (value, key, map) => {
+
+    var block = await web3Provider.eth.getBlock(value.blockNumber)
+
+    if (value.event == "Transfer" && value.returnValues.to == bridgeAddress && currentDay == Math.floor(block.timestamp / 86400)) {
       todayValue += Number(value.returnValues.value)
     }
+
   })
 
   return todayValue
+  
 }
 
 export const getDecimals = contract => contract.methods.decimals().call()
