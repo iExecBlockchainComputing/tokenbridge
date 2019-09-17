@@ -37,12 +37,6 @@ export const getErc20TokenAddress = contract => contract.methods.erc20token().ca
 
 export const getSymbol = contract => contract.methods.symbol().call()
 
-const asyncForEach = async (array, callback) => {
-  for (let index = 0; index < array.length; index++) {
-    await callback(array[index], index, array);
-  }
-}
-
 export const getTokenTransferPerDay = async (contract, bridgeAddress, web3Provider, blocksPerDay, foreignBridge) => {
 
   const blockNumber = await getBlockNumber(web3Provider)
@@ -55,20 +49,19 @@ export const getTokenTransferPerDay = async (contract, bridgeAddress, web3Provid
     toBlock: "latest"
   });
 
-  var todayValue = 0
+  let todayValue = 0
 
-  await asyncForEach(events, async (value, key, map) => {
-
+  await Promise.all(events.map(async (value, key, map) => {
+    
     var block = await web3Provider.eth.getBlock(value.blockNumber)
 
     if (value.event == "Transfer" && value.returnValues.to == bridgeAddress && currentDay == Math.floor(block.timestamp / 86400)) {
       todayValue += Number(value.returnValues.value)
     }
 
-  })
+  }));
 
   return todayValue
-  
 }
 
 export const getDecimals = contract => contract.methods.decimals().call()
