@@ -61,7 +61,9 @@ export const getTokenTransferPerDay = async (contract, bridgeAddress, web3Provid
 
   }));
 
-  return todayValue
+  console.log(todayValue)
+
+  return todayValue;
 }
 
 export const getDecimals = contract => contract.methods.decimals().call()

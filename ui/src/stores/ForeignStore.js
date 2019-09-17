@@ -375,6 +375,10 @@ class ForeignStore {
   getDailyQuotaCompleted() {
     return this.dailyLimit ? (this.totalSpentPerDay / this.dailyLimit) * 100 : 0
   }
+  
+  getDailyQuotaCompletedFromEvents() {
+    return this.dailyLimit ? (fromDecimals(this.tokenTodayTransfer, this.tokenDecimals) / this.dailyLimit) * 100 : 0
+  }
 
   async waitUntilProcessed(txHash) {
     const bridge = this.foreignBridge
