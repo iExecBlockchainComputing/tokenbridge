@@ -1,0 +1,4 @@
+[submodule "contracts"]
+	path = contracts
+	branch = bellecour-v1
+	url = https://github.com/iExecBlockchainComputing/poa-bridge-contracts.git
