@@ -1,6 +1,6 @@
 const BN = require('bignumber.js')
 
-export const fromDecimals = (number, decimals) => {
+const fromDecimals = (number, decimals) => {
   if (decimals == null) {
     decimals = 18
   }
@@ -8,7 +8,7 @@ export const fromDecimals = (number, decimals) => {
   return isBigNumber(number) ? returnValue : returnValue.toString(10)
 }
 
-export const toDecimals = (number, decimals) => {
+const toDecimals = (number, decimals) => {
   if (decimals == null) {
     decimals = 18
   }
@@ -32,4 +32,9 @@ const toBigNumber = number => {
 
 const isString = object => {
   return typeof object === 'string' || (object && object.constructor && object.constructor.name === 'String')
+}
+
+module.exports = {
+  fromDecimals,
+  toDecimals
 }
