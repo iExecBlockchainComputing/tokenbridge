@@ -1,4 +1,5 @@
-import BN from 'bignumber.js'
+const BN = require('bignumber.js')
+
 export const fromDecimals = (number, decimals) => {
   if (decimals == null) {
     decimals = 18
