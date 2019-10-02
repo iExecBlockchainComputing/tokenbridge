@@ -12,7 +12,7 @@ export class Wallet extends React.Component {
     const explorerAddressUrl = isHome
       ? homeStore.getExplorerAddressUrl(address)
       : foreignStore.getExplorerAddressUrl(address)
-    const completed = isHome ? homeStore.getDailyQuotaCompleted() : foreignStore.getDailyQuotaCompletedFromEvents()
+    const completed = isHome ? homeStore.getDailyQuotaCompleted() : foreignStore.getDailyQuotaCompleted()
     const width = `${completed}%`
 
     const wallet =
@@ -41,11 +41,5 @@ export class Wallet extends React.Component {
         </div>
       </div>
     )
-  }
-  componentDidMount() {
-    this.interval = setInterval(() => this.setState({ time: Date.now() }), 1000);
-  }
-  componentWillUnmount() {
-    clearInterval(this.interval);
   }
 }

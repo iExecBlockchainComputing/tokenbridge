@@ -1,7 +1,6 @@
 import BN from 'bignumber.js'
 import { fromDecimals } from './decimals'
 import { fromWei } from 'web3-utils'
-import { getBlockNumber } from './web3'
 import { getValidatorList as commonGetValidatorList, getPastEvents as commonGetPastEvents } from '../../../../commons'
 
 export const ZERO_ADDRESS = '0x0000000000000000000000000000000000000000'
@@ -36,24 +35,6 @@ export const getErc677TokenAddress = contract => contract.methods.erc677token().
 export const getErc20TokenAddress = contract => contract.methods.erc20token().call()
 
 export const getSymbol = contract => contract.methods.symbol().call()
-
-export const getTokenTransferPerDay = async (contract, bridgeAddress, web3Provider, blocksPerDay, foreignBridge) => {
-  const blockNumber = await getBlockNumber(web3Provider)
-  const currentDay = await foreignBridge.methods.getCurrentDay().call()
-  const events = await contract.getPastEvents('allEvents', {
-    //filter: {to: bridgeAddress},
-    fromBlock: blockNumber - blocksPerDay,
-    toBlock: "latest"
-  });
-  let todayValue = 0
-  await Promise.all(events.map(async (value, key, map) => {
-    var block = await web3Provider.eth.getBlock(value.blockNumber)
-    if (value.event == "Transfer" && value.returnValues.to == bridgeAddress && currentDay == Math.floor(block.timestamp / 86400)) {
-      todayValue += Number(value.returnValues.value)
-    }
-  }));
-  return todayValue;
-}
 
 export const getDecimals = contract => contract.methods.decimals().call()
 
