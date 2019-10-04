@@ -1,6 +1,7 @@
 import React from 'react'
 import { inject, observer } from 'mobx-react'
 import numeral from 'numeral'
+import { toDecimals, fromDecimals } from '../stores/utils/decimals'
 
 @inject('RootStore')
 @observer
@@ -31,7 +32,7 @@ export class DailyQuotaModal extends React.Component {
     const { left, top } = this.state
 
     const isHome = web3Store.metamaskNet.id.toString() === web3Store.homeNet.id.toString()
-    const value = isHome ? homeStore.maxCurrentDeposit : foreignStore.maxCurrentDeposit
+    const value = isHome ? homeStore.maxCurrentDeposit : foreignStore.dailyLimit - fromDecimals(foreignStore.tokenTodayTransfer, foreignStore.tokenDecimals)
     const limit = isHome ? homeStore.maxPerTx : foreignStore.maxPerTx
     const from = isHome ? homeStore.symbol : foreignStore.symbol
     const to = isHome ? foreignStore.symbol : homeStore.symbol

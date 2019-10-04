@@ -31,13 +31,14 @@ import {
   getValidatorList,
   getValidatorContract,
   getRequiredSignatures,
-  getValidatorCount
+  getValidatorCount,
+  getTokenTransferPerDay
 } from './utils/contract'
 import { balanceLoaded, removePendingTransaction } from './utils/testUtils'
 import sleep from './utils/sleep'
 import BN from 'bignumber.js'
 import { processLargeArrayAsync } from './utils/array'
-import { fromDecimals } from './utils/decimals'
+import { fromDecimals, toDecimals } from './utils/decimals'
 
 class ForeignStore {
   @observable
@@ -103,6 +104,9 @@ class ForeignStore {
   @observable
   tokenType = ''
 
+  @observable
+  tokenTodayTransfert = 0
+
   feeManager = {
     totalFeeDistributedFromSignatures: BN(0),
     totalFeeDistributedFromAffirmation: BN(0)
@@ -115,6 +119,7 @@ class ForeignStore {
   FOREIGN_BRIDGE_ADDRESS = process.env.REACT_APP_FOREIGN_BRIDGE_ADDRESS
   explorerTxTemplate = process.env.REACT_APP_FOREIGN_EXPLORER_TX_TEMPLATE || ''
   explorerAddressTemplate = process.env.REACT_APP_FOREIGN_EXPLORER_ADDRESS_TEMPLATE || ''
+  BLOCKS_PER_DAY = process.env.REACT_APP_FOREIGN_BLOCKS_PER_DAY
 
   constructor(rootStore) {
     this.web3Store = rootStore.web3Store
@@ -139,6 +144,7 @@ class ForeignStore {
     this.getMaxPerTxLimit()
     this.getEvents()
     this.getTokenBalance()
+    this.getTokenTodayTransfer()
     this.getCurrentLimit()
     this.getFee()
     this.getValidators()
@@ -147,6 +153,7 @@ class ForeignStore {
       this.getBlockNumber()
       this.getEvents()
       this.getTokenBalance()
+      this.getTokenTodayTransfer()
       this.getCurrentLimit()
     }, 15000)
   }
@@ -199,8 +206,9 @@ class ForeignStore {
       } catch (e) {
         this.tokenName = this.foreignWeb3.utils.hexToAscii(await getName(alternativeContract)).replace(/\u0000*$/, '')
       }
-
+     
       this.tokenDecimals = await getDecimals(this.tokenContract)
+
     } catch (e) {
       console.error(e)
     }
@@ -213,6 +221,17 @@ class ForeignStore {
       this.web3Store.getWeb3Promise.then(async () => {
         this.balance = await getBalanceOf(this.tokenContract, this.web3Store.defaultAccount.address)
         balanceLoaded()
+      })
+    } catch (e) {
+      console.error(e)
+    }
+  }
+
+  @action
+  async getTokenTodayTransfer() {
+  	 try {
+      this.web3Store.getWeb3Promise.then(async () => {
+        this.tokenTodayTransfer = await getTokenTransferPerDay(this.tokenContract, this.FOREIGN_BRIDGE_ADDRESS, this.foreignWeb3, this.BLOCKS_PER_DAY, this.foreignBridge)
       })
     } catch (e) {
       console.error(e)
@@ -355,6 +374,14 @@ class ForeignStore {
 
   getDailyQuotaCompleted() {
     return this.dailyLimit ? (this.totalSpentPerDay / this.dailyLimit) * 100 : 0
+  }
+  
+  getDailyQuotaCompletedFromEvents() {
+    return this.dailyLimit ? (fromDecimals(this.tokenTodayTransfer, this.tokenDecimals) / this.dailyLimit) * 100 : 0
+  }
+
+  getMaxCurrentDepositEvents() {
+    return fromDecimals(toDecimals(this.dailyLimit, this.tokenDecimals) - this.tokenTodayTransfer, this.tokenDecimals)
   }
 
   async waitUntilProcessed(txHash) {
