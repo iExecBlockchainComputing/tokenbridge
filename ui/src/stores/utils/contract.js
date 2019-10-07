@@ -53,7 +53,7 @@ export const getTokenTransferPerDay = async (contract, bridgeAddress, web3Provid
   var todayValue = 0
   await Promise.all(events.map(async (value, key, map) => {
     var block = await web3Provider.eth.getBlock(value.blockNumber)
-    if (currentDay == Math.floor(block.timestamp / 86400)) {
+    if (block != null && currentDay == Math.floor(block.timestamp / 86400)) {
       todayValue += Number(value.returnValues.value)
     }
   }));
