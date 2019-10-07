@@ -6,9 +6,8 @@ services:
       context: ..
       dockerfile: ui/Dockerfile
     ports:
-    - "${PORT}:${PORT}"
+      - "${PORT}:${PORT}"
     env_file: ./.env
-    environment: 
+    environment:
       - NODE_ENV=production
     restart: unless-stopped
-    entrypoint: yarn start

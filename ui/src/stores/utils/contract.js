@@ -38,7 +38,6 @@ export const getErc20TokenAddress = contract => contract.methods.erc20token().ca
 
 export const getSymbol = contract => contract.methods.symbol().call()
 
-
 export const getTokenTransferPerDay = async (contract, bridgeAddress, web3Provider, blocksPerDay, foreignBridge) => {
   const blockNumber = await getBlockNumber(web3Provider)
   const currentDay = await foreignBridge.methods.getCurrentDay().call()
