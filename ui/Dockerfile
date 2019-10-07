@@ -16,8 +16,5 @@ RUN mv ./contracts/build ./ && rm -rf ./contracts/* ./contracts/.[!.]* && mv ./b
 COPY ./commons ./commons
 COPY ./ui ./ui
 WORKDIR /mono/ui
-
-RUN yarn build
-RUN npm install -g serve
-
-ENTRYPOINT ["serve", "-s", "build", "-l", "3000"]
+CMD echo "To start a UI application run:" \
+  "yarn start"
